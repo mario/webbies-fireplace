@@ -17,7 +17,7 @@ emerge ${EMERGE_OPTIONS} "=app-shells/bash-3.2_p17-r1" portage
 echo '-3' | etc-update
 
 emerge ${EMERGE_OPTIONS} syslog-ng logrotate
-emerge ${EMERGE_OPTIONS} ruby "=postgresql-8.3.1" nginx
+emerge ${EMERGE_OPTIONS} ruby "=postgresql-8.3.1" nginx screen
 
 emerge --config =postgresql-8.3.1
 
@@ -35,6 +35,11 @@ gem install --no-rdoc --no-ri ramaze mongrel thin pg m4dbi dbd-pg
 
 useradd -m ramaze
 
+# Install Hello World
+
+cp -r sources/home/ramaze/hello /home/ramaze
+chown -R ramaze:ramaze /home/ramaze/hello/
+
 # Nginx
 
 sed -r '/^\s+server \{/ r sources/etc/nginx/nginx.conf.appendum' < /etc/nginx/nginx.conf > new.nginx.conf
@@ -45,8 +50,6 @@ mv new.nginx.conf /etc/nginx/nginx.conf
 
 # Hello World
 
-cp -r sources/home/ramaze/hello /home/ramaze
-chown -R ramaze:ramaze /home/ramaze/hello/
 su ramaze -c 'cd /home/ramaze/hello && screen -d -m ruby start.rb'
 
 echo '*****************************************************'
