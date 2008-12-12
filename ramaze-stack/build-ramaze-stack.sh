@@ -35,19 +35,23 @@ gem install --no-rdoc --no-ri ramaze mongrel thin pg m4dbi dbd-pg
 
 useradd -m ramaze
 
-# Install Hello World
+# Nginx
+
+sed -r '/^\s+server \{/ r sources/etc/nginx/nginx.conf.appendum' < /etc/nginx/nginx.conf > new.nginx.conf
+mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
+mv new.nginx.conf /etc/nginx/nginx.conf
+
+/etc/init.d/nginx start
+
+# Hello World
 
 cp -r sources/home/ramaze/hello /home/ramaze
 chown -R ramaze:ramaze /home/ramaze/hello/
+su ramaze -c 'cd /home/ramaze/hello && screen -d -m ruby start.rb'
 
 echo '*****************************************************'
 echo
-echo 'Now browse to http://your-webbys-ip:8080'
-echo 'Press ^C to kill the hello world app and continue.'
+echo 'ALL DONE!'
+echo 'Browse to http://your-webbys-ip to see a hello world app.'
 echo
 echo '*****************************************************'
-
-su ramaze -c 'cd /home/ramaze/hello && ruby start.rb'
-
-# Nginx
-
