@@ -30,3 +30,24 @@ ruby setup.rb
 ln -s /usr/bin/gem18 /usr/bin/gem
 
 gem install --no-rdoc --no-ri ramaze mongrel thin pg m4dbi dbd-pg
+
+# User
+
+useradd -m ramaze
+
+# Install Hello World
+
+cp -r sources/home/ramaze/hello /home/ramaze
+chown -R ramaze:ramaze /home/ramaze/hello/
+
+echo '*****************************************************'
+echo
+echo 'Now browse to http://your-webbys-ip:8080'
+echo 'Press ^C to kill the hello world app and continue.'
+echo
+echo '*****************************************************'
+
+su ramaze -c 'cd /home/ramaze/hello && ruby start.rb'
+
+# Nginx
+
