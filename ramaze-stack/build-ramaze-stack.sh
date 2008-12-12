@@ -20,6 +20,7 @@ emerge ${EMERGE_OPTIONS} syslog-ng logrotate
 emerge ${EMERGE_OPTIONS} ruby "=postgresql-8.3.1" nginx screen
 
 emerge --config =postgresql-8.3.1
+rc-update add postgresql default
 
 # Install Rubygems
 
@@ -48,6 +49,7 @@ mv /etc/nginx/nginx.conf /etc/nginx/nginx.conf.bak
 mv new.nginx.conf /etc/nginx/nginx.conf
 
 /etc/init.d/nginx start
+rc-update add nginx default
 
 # Hello World
 
