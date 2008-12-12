@@ -2,8 +2,8 @@
 
 # Update system config
 
-#EMERGE_OPTIONS="-tv"
-EMERGE_OPTIONS="-atv"
+EMERGE_OPTIONS="-tv"
+#EMERGE_OPTIONS="-atv"
 cat sources/etc/make.conf.appendum >> /etc/make.conf
 cp sources/etc/portage/* /etc/portage
 echo 'rm_opts=""' >> /etc/etc-update.conf
