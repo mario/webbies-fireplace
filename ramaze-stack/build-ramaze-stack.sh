@@ -26,10 +26,11 @@ emerge --config =postgresql-8.3.1
 wget http://rubyforge.org/frs/download.php/45905/rubygems-1.3.1.tgz
 tar zxvf rubygems-1.3.1.tgz
 cd rubygems-1.3.1
-ruby setup.rb
+/usr/bin/ruby setup.rb
+cd ..
 ln -s /usr/bin/gem18 /usr/bin/gem
 
-gem install --no-rdoc --no-ri ramaze mongrel thin pg m4dbi dbd-pg
+/usr/bin/gem install --no-rdoc --no-ri ramaze mongrel thin pg m4dbi dbd-pg
 
 # User
 
@@ -50,7 +51,7 @@ mv new.nginx.conf /etc/nginx/nginx.conf
 
 # Hello World
 
-su ramaze -c 'cd /home/ramaze/hello && screen -d -m ruby start.rb'
+su ramaze -c 'cd /home/ramaze/hello && /usr/bin/screen -d -m /usr/bin/ruby start.rb'
 
 echo '*****************************************************'
 echo
