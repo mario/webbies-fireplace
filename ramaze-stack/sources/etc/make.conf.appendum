@@ -1,0 +1,9 @@
+USE="-X alsa apache2 -arts bash-completion -berkdb -fam -gnome -gstreamer -gtk -ipv6 -java -jikes -kde -python -qt -qt3 -qt4 -sqlite -ssl"
+
+MAKEOPTS="-j5"
+
+FEATURES="collision-protect sandbox userpriv usersandbox"
+
+PORT_LOGDIR=/var/log/portage
+PORTAGE_ELOG_CLASSES="warn error log"
+PORTAGE_ELOG_SYSTEM="echo save syslog:error"

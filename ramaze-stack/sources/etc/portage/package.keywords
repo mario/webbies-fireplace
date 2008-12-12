@@ -1,0 +1,3 @@
+dev-db/libpq ~x86
+dev-db/postgresql ~x86
+dev-lang/ruby ~x86
