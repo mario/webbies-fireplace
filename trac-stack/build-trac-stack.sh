@@ -112,7 +112,7 @@ echo 'Done'
 # Creating initial trac project
 
 echo 'Creating trac project'
-sudo trac-admin /var/trac/projects/$PROJECT initenv
+sudo trac-admin /var/trac/projects/"$PROJECT" initenv
 echo 'Done'
 
 # Setting up trac config
@@ -179,6 +179,8 @@ echo 'Creating some apache dirs'
 sudo mkdir -p /var/apache/apache-trac-fireplace/html
 echo 'Done'
 
+echo 'Copying ssl.conf stuff'
+sudo cp ~/webbies-fireplace/trac-stack/sources/apache2/conf.d/ssl.conf /etc/apache2/conf.d
 # Reloading apache
 
 echo 'Reloading apache'
