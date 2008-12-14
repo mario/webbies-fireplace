@@ -19,6 +19,7 @@ In case you don't have git installed:
 
 Debian/Ubuntu: sudo apt-get update && sudo apt-get install git-core
 Fedora: yum install git-core
+openSUSE: zypper install git 
 
 Current maintainer:
 Mario Danic <mario.danic@gmail.com>
