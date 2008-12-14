@@ -79,7 +79,7 @@ echo 'Done'
 
 # Restarting tomcat and apache
 echo 'Restarting tomcat and apache'
-/etc.init.d/tomcat start
+/etc/init.d/tomcat start
 /etc/init.d/apache2 start
 echo 'Done'
 
