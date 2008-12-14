@@ -76,7 +76,7 @@ echo 'Done'
 # Init script creation
 
 echo 'Setting up git daemon init script'
-cp sources/etc/init.d/git-daemon /etc/init.d
+cp webbies-fireplace/gitosis-stack/sources/etc/init.d/git-daemon /etc/init.d
 sudo chmod +x /etc/init.d/git-daemon
 sudo invoke-rc.d git-daemon start
 echo 'Done'
