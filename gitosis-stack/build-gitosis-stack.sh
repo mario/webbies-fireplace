@@ -38,8 +38,8 @@ echo 'Done'
 # Lets clean up after ourselves
 
 echo 'Cleaning up...'
-cd ..
-rm -r gitosis
+cd ../..
+rm -r src
 echo 'Done'
 
 # Lets add a required git user
