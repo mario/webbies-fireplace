@@ -62,7 +62,7 @@ echo 'Done'
 # Lets setup subversion config
 
 echo 'Setting up subversion'
-sudo cp sources/etc/apache/conf.d/subversion.conf /etc/apache/conf.d
+sudo cp sources/etc/apache2/conf.d/subversion.conf /etc/apache2/conf.d
 echo 'Done'
 
 # Reloading apache
@@ -117,7 +117,7 @@ echo 'Done'
 # Setting up trac config
 
 echo 'Setting up trac config'
-cp sources/etc/apache2/conf.d/trac.conf /etc/apache2/conf.d
+sudo cp sources/etc/apache2/conf.d/trac.conf /etc/apache2/conf.d
 echo 'Done'
 
 # Reloading apache
@@ -129,6 +129,48 @@ echo 'Done'
 # Setting up permissions on trac projects
 
 echo 'Applying permissions on trac'
-chown -R www-data.www-data /var/trac
-find /services/trac/ -type d|xargs chmod g+sw
+sudo chown -R www-data.www-data /var/trac
+find /var/trac/ -type d|xargs chmod g+sw
 echo 'Done'
+
+# Lets install openssl just in case
+
+echo 'Installing openssl'
+sudo apt-get install openssl
+echo 'Done'
+
+# Lets create apache private key
+
+echo 'Creating private apache ssl key'
+cd /etc/ssl/private
+sudo openssl genrsa -out apache-trac-fireplace.key 1024
+echo 'Done'
+
+# We need certificate
+
+echo 'Creating a certificate'
+cd /etc/ssl/certs
+sudo openssl req -new -x509 -days 365 -key ../private/apache-trac-fireplace.key  -out apache-trac-fireplace.crt
+echo 'Done'
+
+# Lets make things secure
+
+echo 'Securing key'
+cd /etc/ssl/private
+chmod 400 apache-trac-fireplace.key
+echo 'Done'
+
+# Enabling ssl module
+
+echo 'Enabling ssl module'
+sudo a2enmode ssl
+echo 'Done'
+
+# Setting conf file where it should be
+
+echo 'Doing some stuff with ssl conf'
+sudo cp sources/apache2/conf.d/ssl.conf /etc/apache2/conf.d
+echo 'Done'
+
+
+
