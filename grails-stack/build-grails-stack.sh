@@ -52,10 +52,10 @@ echo 'Done'
 
 # Lets throw in Apache 
 echo 'Throwing apache more in the mix'
-cp sources/etc/apache2/workers.properties /etc/apache2
+cp ~/webbies-fireplace/grails-stack/sources/etc/apache2/workers.properties /etc/apache2
 chown tomcat.tomcat /etc/apache2/workers.properties
-cp sources/etc/apache2/sites-available/java_example /etc/apache2/sites-available
-cat sources/etc/apache2/apache2.conf.append >> /etc/apache2/apache2.conf
+cp ~/webbies-fireplace/grails-stack/sources/etc/apache2/sites-available/java_example /etc/apache2/sites-available
+cat ~/webbies-fireplace/grails-stack/sources/etc/apache2/apache2.conf.append >> /etc/apache2/apache2.conf
 echo 'Done'
 
 # Stop Apache
@@ -65,14 +65,14 @@ echo 'Done'
 
 # Create tomcat init scripts
 echo 'Configure tomcat init scripts'
-cp sources/etc/init.d/tomcat /etc/init.d
+cp ~/webbies-fireplace/grails-stack/sources/etc/init.d/tomcat /etc/init.d
 chmod +x /etc/init.d/tomcat
 invoke-rc.d tomcat start
 echo 'Done'
 
 # Setting up GRAILS & Java environment
 echo 'Setting up grails and java environment'
-cp sources/etc/environment /etc/environment
+cp ~/webbies-fireplace/grails-stack/sources/etc/environment /etc/environment
 echo 'Done'
 
 # Restarting tomcat and apache
