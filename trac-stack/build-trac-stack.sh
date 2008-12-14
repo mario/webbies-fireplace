@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # We need to check if we have a project name and developer as arguments
 
 if [ $# -ne 2 ]; then
