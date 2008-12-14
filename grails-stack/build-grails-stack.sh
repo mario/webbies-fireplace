@@ -55,6 +55,7 @@ echo 'Throwing apache more in the mix'
 cp ~/webbies-fireplace/grails-stack/sources/etc/apache2/workers.properties /etc/apache2
 chown tomcat.tomcat /etc/apache2/workers.properties
 cp ~/webbies-fireplace/grails-stack/sources/etc/apache2/sites-available/java_example /etc/apache2/sites-available
+cp ~/webbies-fireplace/grails-stack/sources/usr/share/tomcat-6.0.18/conf/server.xml /usr/share/tomcat-6.0.18/conf/server.xml
 echo "Include /usr/share/tomcat/conf/jk/mod_jk.conf-auto" >> /etc/apache2/apache2.conf
 
 echo 'Done'
