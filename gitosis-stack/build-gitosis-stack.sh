@@ -3,7 +3,7 @@
 echo '***********************************************************'
 echo
 echo 'IMPORTANT'
-echo 'Before we start, please create a ssh key pair, and '
+echo 'Before we begin, please create a ssh key pair locally, and '
 echo 'upload the public key to /tmp under the name of: id_rsa.pub'
 echo
 echo '***********************************************************'
