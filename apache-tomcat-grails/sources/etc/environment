@@ -1,0 +1,4 @@
+PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/lib/grails/grails-1.0.4/bin"
+LANG="en_US.UTF-8"
+JAVA_HOME=/usr/lib/jvm/java-6-openjdk
+GRAILS_HOME=/usr/lib/grails/grails-1.0.4

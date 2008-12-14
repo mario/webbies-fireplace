@@ -1,0 +1,12 @@
+<VirtualHost *:80>
+ServerName abc.myhost.com
+ServerAdmin webmaster@abc.myhost.com
+JkMount /* default
+JkMount /*.jsp default
+DirectoryIndex index.jsp index.html
+# Globally deny access to the WEB-INF directory
+<LocationMatch ‘.*WEB-INF.*’>
+AllowOverride None
+deny from all
+</LocationMatch>
+</VirtualHost>
