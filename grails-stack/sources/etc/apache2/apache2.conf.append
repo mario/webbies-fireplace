@@ -1,8 +1,0 @@
-# mod_jk config
-# Where to find workers.properties
-JkWorkersFile /etc/apache2/workers.properties #Where to put jk logs
-JkLogFile /var/log/apache2/jk.log# Set the jk log level [debug/error/info]
-JkLogLevel info# Select the log format
-JkLogStampFormat “[%a %b %d %H:%M:%S %Y] “#JkOptions indicate to send SSL KEY SIZE,
-JkOptions +ForwardKeySize +ForwardURICompat -ForwardDirectories# JkRequestLogFormat set the request format
-JkRequestLogFormat “%w %V %T”
