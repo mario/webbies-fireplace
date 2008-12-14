@@ -7,12 +7,12 @@ echo 'This tiny script is a wrapper around various'
 echo 'provided server deployment scripts.'
 
 if [ $# -ne 1 ]; then
-  user_input
+  userinput
 else
-  do_work $1
+  dowork $1
 fi
 
-function user_input (
+function userinput (
 echo 'Please select desired stack:'
 echo '1)Ramaze stack'
 echo '2)Gitosis stack'
@@ -22,7 +22,7 @@ read stack
 do_work $stack
 )
 
-function do_work (
+function dowork (
 case "$1" in
 1)
 cd ramaze-stack
