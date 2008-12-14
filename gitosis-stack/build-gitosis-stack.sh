@@ -29,7 +29,7 @@ echo 'Done'
 # Fetching and installing gitosis
 
 echo 'Fetching and installing gitorious'
-cd ~ && mkdir src && src
+cd ~ && mkdir src && cd src
 git clone git://eagain.net/gitosis.git
 cd gitosis
 python setup.py install
