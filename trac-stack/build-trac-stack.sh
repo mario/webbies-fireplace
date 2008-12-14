@@ -3,11 +3,11 @@
 
 # We need to check if we have a project name argument
 
-if [ "${1}" ]; then
- echo 'args is:' "${1}"
+if [ $# -ne 2 ]; then
+  echo $1 'Please supply project name and developer username as arguments'
+  exit 2
 else
- echo $1 'Please supply project name as argument'
- exit 2
+  echo 'Args check OK'
 fi
 
 echo 'Path to your repository will be: /var/svn/repositories/' "${1}"
@@ -15,6 +15,7 @@ echo 'Please remember this as you will need to enter it when configuring trac'
 sleep 5
 
 PROJECT = $1
+DEVELOPER = $2
 
 # Update list of available packages
 
@@ -172,5 +173,41 @@ echo 'Doing some stuff with ssl conf'
 sudo cp sources/apache2/conf.d/ssl.conf /etc/apache2/conf.d
 echo 'Done'
 
+# Creating apache dirs we need
 
+echo 'Creating some apache dirs'
+sudo mkdir -p /var/apache/apache-trac-fireplace/html
+echo 'Done'
+
+# Reloading apache
+
+echo 'Reloading apache'
+sudo /etc/init.d/apache reload
+echo 'Done'
+
+# Creating initial user
+
+echo 'Creating initial user'
+htpasswd -cm /var/apache/apache-trac-fireplace/htpasswd $DEVELOPER
+echo 'Done'
+
+# Setting admin user for trac project
+
+echo 'Setting admin user for trac project'
+echo 'NOTE!'
+echo 'Please input the following when asked for input:'
+echo 'permission add {$DEVELOPER} TRAC_ADMIN'
+echo 'Then click ctrl+c to exit the console'
+sudo trac-admin /var/trac/projects/$PROJECT
+echo 'Done'
+
+echo '*************************************************************************'
+echo
+echo 'ALL DONE!'
+echo 'You should now be able to do your trac stuff with your server '
+echo 'at a git://your-webbys-ip/projects/{$PROJECT} addy'
+echo 'Your subversion repo is available at:'
+echo 'https://your-webbys-ip/svn/{PROJECT}'
+echo
+echo '*************************************************************************'
 
