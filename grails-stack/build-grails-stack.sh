@@ -56,7 +56,7 @@ cp ~/webbies-fireplace/grails-stack/sources/etc/apache2/workers.properties /etc/
 chown tomcat.tomcat /etc/apache2/workers.properties
 cp ~/webbies-fireplace/grails-stack/sources/etc/apache2/sites-available/java_example /etc/apache2/sites-available
 cp ~/webbies-fireplace/grails-stack/sources/usr/share/tomcat-6.0.18/conf/server.xml /usr/share/tomcat-6.0.18/conf/server.xml
-echo "/usr/share/tomcat-6.0.18/conf/auto/mod_jk.conf" >> /etc/apache2/apache2.conf
+echo "Include /usr/share/tomcat-6.0.18/conf/auto/mod_jk.conf" >> /etc/apache2/apache2.conf
 
 echo 'Done'
 
