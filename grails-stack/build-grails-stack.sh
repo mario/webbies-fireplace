@@ -83,8 +83,7 @@ echo 'Done'
 
 # Fetching and installing grails
 echo 'Fetching and installing grails'
-cd ~
-wget http://dist.codehaus.org/grails/grails-bin-1.0.4.tar.gz
+wget http://mirror.nyi.net/apache/tomcat/tomcat-6/v6.0.18/bin/apache-tomcat-6.0.18.tar.gz
 mkdir /usr/lib/grails
 cd /usr/lib/grails/
 mv ~/grails-bin-1.0.4.tar.gz .
