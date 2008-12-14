@@ -197,7 +197,7 @@ echo 'Done'
 echo 'Setting admin user for trac project'
 echo 'NOTE!'
 echo 'Please input the following when asked for input:'
-echo 'permission add "$DEVELOPER" TRAC_ADMIN'
+echo 'permission add' "$DEVELOPER" 'TRAC_ADMIN'
 echo 'Then click ctrl+c to exit the console'
 sudo trac-admin /var/trac/projects/$PROJECT
 echo 'Done'
