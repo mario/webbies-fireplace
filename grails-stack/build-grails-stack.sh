@@ -25,6 +25,11 @@ echo 'Fetching and installing apache mods'
 apt-get install libapache2-mod-jk
 echo 'Done'
 
+# Restart apache
+echo 'Restarting apache'
+/etc/init.d/apache2 restart
+echo 'Done'
+
 # Fetching and installing openJDK
 
 echo 'Fetching and installing apache mods'
