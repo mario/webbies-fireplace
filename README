@@ -15,6 +15,10 @@ In some cases, you might need to do:
 
 chmod +x build-$stack.sh
 
+In case you don't have git installed:
+
+Debian/Ubuntu: sudo apt-get install git-core
+
 Current maintainer:
 Mario Danic <mario.danic@gmail.com>
 
