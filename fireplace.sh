@@ -19,7 +19,7 @@ echo '2)Gitosis stack'
 echo '3)Trac stack'
 echo '4)Grails stack'
 read stack
-do_work stack
+do_work $stack
 )
 
 function do_work(
