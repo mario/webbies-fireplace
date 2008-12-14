@@ -69,7 +69,7 @@ echo 'Done'
 # Reloading apache
 
 echo 'Reloading apache'
-sudo /etc/init.d/apache reload
+sudo /etc/init.d/apache2 reload
 echo 'Done'
 
 # Setting up permissions on svn repos
@@ -124,7 +124,7 @@ echo 'Done'
 # Reloading apache
 
 echo 'Reloading apache'
-sudo /etc/init.d/apache reload
+sudo /etc/init.d/apache2 reload
 echo 'Done'
 
 # Setting up permissions on trac projects
@@ -182,7 +182,7 @@ echo 'Done'
 # Reloading apache
 
 echo 'Reloading apache'
-sudo /etc/init.d/apache reload
+sudo /etc/init.d/apache2 reload
 echo 'Done'
 
 # Creating initial user
