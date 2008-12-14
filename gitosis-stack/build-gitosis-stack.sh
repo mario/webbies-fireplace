@@ -12,7 +12,13 @@ echo '***********************************************************'
 
 echo 'Fetching updated list of available packages'
 sudo apt-get update
-echo 'Done!'
+echo 'Done'
+
+# Somebody missed essential packages
+
+echo 'Installing essential log packages'
+sudo apt-get install syslog-ng logrotate
+echo 'Done'
 
 # Install git
 
