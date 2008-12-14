@@ -10,7 +10,7 @@ else
   echo 'Args check OK'
 fi
 
-echo 'Path to your repository will be: /var/svn/repositories/"${1}"'
+echo 'Path to your repository will be: /var/svn/repositories/'"{$1}"
 echo 'Please remember this as you will need to enter it when configuring trac'
 sleep 5
 
