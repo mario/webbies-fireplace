@@ -67,7 +67,9 @@ echo 'Done'
 
 # Reloading apache
 
+echo 'Reloading apache'
 sudo /etc/init.d/apache reload
+echo 'Done'
 
 # Setting up permissions on svn repos
 
@@ -110,4 +112,23 @@ echo 'Done'
 
 echo 'Creating trac project'
 sudo trac-admin /var/trac/projects/$PROJECT initenv
+echo 'Done'
+
+# Setting up trac config
+
+echo 'Setting up trac config'
+cp sources/etc/apache2/conf.d/trac.conf /etc/apache2/conf.d
+echo 'Done'
+
+# Reloading apache
+
+echo 'Reloading apache'
+sudo /etc/init.d/apache reload
+echo 'Done'
+
+# Setting up permissions on trac projects
+
+echo 'Applying permissions on trac'
+chown -R www-data.www-data /var/trac
+find /services/trac/ -type d|xargs chmod g+sw
 echo 'Done'
