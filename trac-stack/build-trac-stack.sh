@@ -179,8 +179,6 @@ echo 'Creating some apache dirs'
 sudo mkdir -p /var/apache/apache-trac-fireplace/html
 echo 'Done'
 
-echo 'Copying ssl.conf stuff'
-sudo cp ~/webbies-fireplace/trac-stack/sources/apache2/conf.d/ssl.conf /etc/apache2/conf.d
 # Reloading apache
 
 echo 'Reloading apache'
