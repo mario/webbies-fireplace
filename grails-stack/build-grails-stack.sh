@@ -42,7 +42,8 @@ cd /usr/share
 wget http://mirror.nyi.net/apache/tomcat/tomcat-6/v6.0.18/bin/apache-tomcat-6.0.18.tar.gz
 tar zxvf apache-tomcat-6.0.18.tar.gz
 mv apache-tomcat-6.0.18 tomcat-6.0.18
-adduser tomcat --disabled-password && addgroup tomcat
+groupadd tomcat
+useradd -G developers tomcat
 cd tomcat-6.0.18
 chown -R tomcat:tomcat webapps; chmod -R 775 webapps
 usermod -aG tomcat www-data
@@ -80,7 +81,7 @@ echo 'Done'
 # Restarting tomcat and apache
 echo 'Restarting tomcat and apache'
 /etc/init.d/tomcat start
-/etc/init.d/apache2 start
+/etc/init.d/apache2 restart
 echo 'Done'
 
 # Fetching and installing grails
