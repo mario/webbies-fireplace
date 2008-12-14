@@ -16,7 +16,7 @@ echo 'Done'
 
 # Somebody missed essential packages
 
-echo 'Installing essential log packages'
+echo 'Fetching and installing essential log packages'
 sudo apt-get install syslog-ng logrotate
 echo 'Done'
 
