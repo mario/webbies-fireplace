@@ -99,7 +99,7 @@ echo 'Done'
 
 # Now py bindings to svn
 
-echo 'Installing python-subversionc
+echo 'Installing python-subversion'
 sudo apt-get install python-subversion
 echo 'Done'
 
