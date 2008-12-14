@@ -7,7 +7,9 @@ echo 'Before we begin, please create a ssh key pair locally, and '
 echo 'upload the public key to /tmp under the name of: id_rsa.pub'
 echo
 echo '***********************************************************'
- 
+
+sleep 5
+
 # Update list of available packages
 
 echo 'Fetching updated list of available packages'
