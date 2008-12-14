@@ -39,7 +39,7 @@ echo 'Done'
 
 echo 'Cleaning up...'
 cd ..
-rm -rf gitosis
+rm -r gitosis
 echo 'Done'
 
 # Lets add a required git user
