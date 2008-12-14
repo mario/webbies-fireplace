@@ -1,0 +1,22 @@
+========================
+Webbies fireplace
+========================
+
+A set of server deployment scripts, initially targeted
+at Webby's, but should work anywhere. 
+
+To get started with deployment:
+
+git clone git://github.com/mario/webbies-fireplace.git
+cd webbies-fireplace/$stack
+./build-$stack.sh
+
+In some cases, you might need to do:
+
+chmod +x build-$stack.sh
+
+Current maintainer:
+Mario Ðanic <mario.danic@gmail.com>
+
+Contributors:
+Ramaze stack - Pistos
