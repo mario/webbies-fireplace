@@ -164,13 +164,13 @@ echo 'Done'
 # Enabling ssl module
 
 echo 'Enabling ssl module'
-sudo a2enmode ssl
+sudo a2enmod ssl
 echo 'Done'
 
 # Setting conf file where it should be
 
 echo 'Doing some stuff with ssl conf'
-sudo cp sources/apache2/conf.d/ssl.conf /etc/apache2/conf.d
+sudo cp ~/webbies-fireplace/trac-stack/sources/apache2/conf.d/ssl.conf /etc/apache2/conf.d
 echo 'Done'
 
 # Creating apache dirs we need
