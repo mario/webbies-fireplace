@@ -205,9 +205,9 @@ echo '*************************************************************************'
 echo
 echo 'ALL DONE!'
 echo 'You should now be able to do your trac stuff with your server '
-echo 'at a git://your-webbys-ip/projects/"{$PROJECT}" addy'
+echo 'at a git://your-webbys-ip/projects/"$PROJECT" addy'
 echo 'Your subversion repo is available at:'
-echo 'https://your-webbys-ip/svn/"{PROJECT}"'
+echo 'https://your-webbys-ip/svn/"$PROJECT"'
 echo
 echo '*************************************************************************'
 
