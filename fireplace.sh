@@ -12,7 +12,7 @@ else
   do_work $1
 fi
 
-function user_input(
+function user_input (
 echo 'Please select desired stack:'
 echo '1)Ramaze stack'
 echo '2)Gitosis stack'
@@ -22,7 +22,7 @@ read stack
 do_work $stack
 )
 
-function do_work(
+function do_work (
 case "$1" in
 1)
 cd ramaze-stack
