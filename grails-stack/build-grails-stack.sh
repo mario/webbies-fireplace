@@ -92,3 +92,10 @@ cd /usr/lib/grails/
 mv ~/grails-bin-1.0.4.tar.gz .
 tar -zxvf grails-bin-1.0.4.tar.gz
 echo 'Done'
+
+echo '*****************************************************'
+echo
+echo 'ALL DONE!'
+echo 'Browse to http://your-webbys-ip to see a tomcat welcome page.'
+echo
+echo '*****************************************************'
