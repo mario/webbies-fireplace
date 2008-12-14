@@ -13,25 +13,25 @@ sleep 5
 # Update list of available packages
 
 echo 'Fetching updated list of available packages'
-sudo apt-get update
+apt-get update
 echo 'Done'
 
 # Somebody missed essential packages
 
 echo 'Fetching and installing essential log packages'
-sudo apt-get install syslog-ng logrotate
+apt-get install syslog-ng logrotate
 echo 'Done'
 
 # Install git
 
 echo 'Fetching and installing git'
-sudo apt-get install git-core
+apt-get install git-core
 echo 'Done'
 
 # We will need python-setuptools
 
 echo 'Fetching and installing python-setuptools'
-sudo apt-get install python-setuptools
+apt-get install python-setuptools
 echo 'Done'
 
 # Fetching and installing gitosis
@@ -40,20 +40,20 @@ echo 'Fetching and installing gitorious'
 cd ~ && mkdir src && cd src
 git clone git://eagain.net/gitosis.git
 cd gitosis
-sudo python setup.py install
+python setup.py install
 echo 'Done'
 
 # Lets clean up after ourselves
 
 echo 'Cleaning up...'
 cd ../..
-sudo rm -r src
+rm -r src
 echo 'Done'
 
 # Lets add a required git user
 
 echo 'Adding required system user - git'
-sudo adduser \
+adduser \
     --system \
     --shell /bin/sh \
     --gecos 'git version control' \
@@ -72,7 +72,7 @@ echo 'Done'
 # Minor performance trick
 
 echo 'Applying minor performance trick'
-sudo chmod 755 /home/git/repositories/gitosis-admin.git/hooks/post-update
+chmod 755 /home/git/repositories/gitosis-admin.git/hooks/post-update
 echo 'Done'
 
 # Start a git daemon for serving repositories anonymously
@@ -84,9 +84,9 @@ echo 'Done'
 # Init script creation
 
 echo 'Setting up git daemon init script'
-sudo cp webbies-fireplace/gitosis-stack/sources/etc/init.d/git-daemon /etc/init.d
-sudo chmod +x /etc/init.d/git-daemon
-sudo invoke-rc.d git-daemon start
+cp webbies-fireplace/gitosis-stack/sources/etc/init.d/git-daemon /etc/init.d
+chmod +x /etc/init.d/git-daemon
+invoke-rc.d git-daemon start
 echo 'Done'
 
 echo '*************************************************************************'
