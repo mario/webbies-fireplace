@@ -4,7 +4,7 @@ echo '***********************************************************'
 echo
 echo 'IMPORTANT'
 echo 'Before we start, please create a ssh key pair, and '
-echo 'upload the public key to /tmp under the name of: id_rsa.pub
+echo 'upload the public key to /tmp under the name of: id_rsa.pub'
 echo
 echo '***********************************************************'
  
@@ -85,7 +85,7 @@ echo '*************************************************************************'
 echo
 echo 'ALL DONE!'
 echo 'You should now be able to do your git stuff with your server '
-echo 'at a git://your-webbys-ip/your_repo.git addy
+echo 'at a git://your-webbys-ip/your_repo.git addy'
 echo 'Please read:'
 echo 'scie.nti.st/2007/11/14/hosting-git-repositories-the-easy-and-secure-way'
 echo
