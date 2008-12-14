@@ -42,7 +42,8 @@ cd /usr/share
 wget http://mirror.nyi.net/apache/tomcat/tomcat-6/v6.0.18/bin/apache-tomcat-6.0.18.tar.gz
 tar zxvf apache-tomcat-6.0.18.tar.gz
 mv apache-tomcat-6.0.18 tomcat-6.0.18
-useradd -G tomcat tomcat
+useradd -M tomcat
+grupadd tomcat
 cd tomcat-6.0.18
 chown -R tomcat:tomcat webapps; chmod -R 775 webapps
 usermod -aG tomcat www-data
