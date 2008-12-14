@@ -50,7 +50,7 @@ echo 'Throwing apache more in the mix'
 cp sources/etc/apache2/workers.properties /etc/apache2
 chown tomcat.tomcat /etc/apache2/workers.properties
 cp sources/etc/apache2/sites-available/java_example /etc/apache2/sites-available
-cat sources/etc/apache2/apache2.conf.append /etc/apache2/apache2.conf
+cat sources/etc/apache2/apache2.conf.append >> /etc/apache2/apache2.conf
 echo 'Done'
 
 # Stop Apache
