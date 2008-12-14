@@ -14,8 +14,8 @@ echo 'Path to your repository will be: /var/svn/repositories/'"$1"
 echo 'Please remember this as you will need to enter it when configuring trac'
 sleep 5
 
-PROJECT = "$1"
-DEVELOPER = "$2"
+PROJECT=$1
+DEVELOPER=$2
 
 # Update list of available packages
 
