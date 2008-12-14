@@ -38,14 +38,14 @@ echo 'Fetching and installing gitorious'
 cd ~ && mkdir src && cd src
 git clone git://eagain.net/gitosis.git
 cd gitosis
-python setup.py install
+sudo python setup.py install
 echo 'Done'
 
 # Lets clean up after ourselves
 
 echo 'Cleaning up...'
 cd ../..
-rm -r src
+sudo rm -r src
 echo 'Done'
 
 # Lets add a required git user
