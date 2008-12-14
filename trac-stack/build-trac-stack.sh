@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-# We need to check if we have a project name argument
+# We need to check if we have a project name and developer as arguments
 
 if [ $# -ne 2 ]; then
   echo $1 'Please supply project name and developer username as arguments'
