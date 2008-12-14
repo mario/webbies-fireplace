@@ -6,7 +6,7 @@ echo "Welcome to Webby's fireplace"
 echo 'This tiny script is a wrapper around various'
 echo 'provided server deployment scripts.'
 
-function user_input (
+user_input () {
 echo 'Please select desired stack:'
 echo '1)Ramaze stack'
 echo '2)Gitosis stack'
@@ -14,9 +14,9 @@ echo '3)Trac stack'
 echo '4)Grails stack'
 read stack
 do_work $stack
-)
+}
 
-function do_work (
+do_work () {
 case "$1" in
 1)
 cd ramaze-stack
@@ -36,7 +36,7 @@ echo 'Wrong selection'
 exit 2
 ;;
 esac
-)
+}
 
 if [ $# -ne 1 ]; then
   user_input
