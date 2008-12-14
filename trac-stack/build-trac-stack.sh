@@ -188,6 +188,7 @@ echo 'Done'
 # Creating initial user
 
 echo 'Creating initial user'
+echo 'Please enter password for your trac/subversion user'
 htpasswd -cm /var/apache/apache-trac-fireplace/htpasswd $DEVELOPER
 echo 'Done'
 
