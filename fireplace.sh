@@ -23,12 +23,15 @@ cd ramaze-stack
 ./build-ramaze-stack.sh
 ;;
 2)
+cd gitosis-stack
 ./build-gitosis-stack.sh
 ;;
 3)
+cd trac-stack
 ./build-trac-stack.sh
 ;;
 4)
+cd grails-stack
 ./build-grails-stack.sh
 ;;
 *)
