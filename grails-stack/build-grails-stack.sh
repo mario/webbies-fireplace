@@ -39,7 +39,7 @@ echo 'Done'
 # Doing stuff with Tomcat
 echo 'Doing stuff with Tomcat'
 cd /usr/share
-wget http://ftp.carnet.hr/misc/apache/tomcat/tomcat-6/v6.0.18/bin/apache-tomcat-6.0.18.tar.gz
+wget http://mirror.nyi.net/apache/tomcat/tomcat-6/v6.0.18/bin/apache-tomcat-6.0.18.tar.gz
 tar zxvf apache-tomcat-6.0.18.tar.gz
 mv apache-tomcat-6.0.18 tomcat-6.0.18
 adduser tomcat && addgroup tomcat
@@ -83,7 +83,7 @@ echo 'Done'
 
 # Fetching and installing grails
 echo 'Fetching and installing grails'
-wget http://mirror.nyi.net/apache/tomcat/tomcat-6/v6.0.18/bin/apache-tomcat-6.0.18.tar.gz
+wget http://dist.codehaus.org/grails/grails-bin-1.0.4.tar.gz
 mkdir /usr/lib/grails
 cd /usr/lib/grails/
 mv ~/grails-bin-1.0.4.tar.gz .
