@@ -85,6 +85,7 @@ echo 'Done'
 
 # Fetching and installing grails
 echo 'Fetching and installing grails'
+cd ~
 wget http://dist.codehaus.org/grails/grails-bin-1.0.4.tar.gz
 mkdir /usr/lib/grails
 cd /usr/lib/grails/
