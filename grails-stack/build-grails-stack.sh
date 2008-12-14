@@ -10,19 +10,19 @@ echo 'Done'
 # Somebody missed essential packages
 
 echo 'Fetching and installing essential log packages'
-apt-get install syslog-ng logrotate
+apt-get install syslog-ng logrotate -y
 echo 'Done'
 
 # Fetching and installing apache
 
 echo 'Fetching and installing apache'
-apt-get install apache2
+apt-get install apache2 -y
 echo 'Done'
 
 # Fetching and installing apache modules
 
 echo 'Fetching and installing apache mods'
-apt-get install libapache2-mod-jk
+apt-get install libapache2-mod-jk -y
 echo 'Done'
 
 # Restart apache
@@ -33,7 +33,7 @@ echo 'Done'
 # Fetching and installing openJDK
 
 echo 'Fetching and installing apache mods'
-sudo apt-get install openjdk-6-jdk
+sudo apt-get install openjdk-6-jdk -y
 echo 'Done'
 
 # Doing stuff with Tomcat

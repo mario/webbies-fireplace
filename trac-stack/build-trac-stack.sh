@@ -25,13 +25,13 @@ echo 'Done'
 # Somebody missed essential packages
 
 echo 'Fetching and installing essential log packages'
-apt-get install syslog-ng logrotate
+apt-get install syslog-ng logrotate -y
 echo 'Done'
 
 # Install Subversion
 
 echo 'Fetching and installing svn'
-apt-get install subversion
+apt-get install subversion -y
 echo 'Done'
 
 # Create svn layout
@@ -49,14 +49,14 @@ echo 'Done'
 # Fetching and installing apache
 
 echo 'Fetching and installing apache'
-apt-get install apache2
+apt-get install apache2 -y
 echo 'Done'
 
 # Fetching and installing apache modules
 
 echo 'Fetching and installing apache modules'
-apt-get install libapache2-mod-python
-apt-get install libapache2-svn
+apt-get install libapache2-mod-python -y
+apt-get install libapache2-svn -y
 echo 'Done'
 
 # Lets setup subversion config
@@ -81,7 +81,7 @@ echo 'Done'
 # We will need python-setuptools
 
 echo 'Fetching and installing python-setuptools'
-apt-get install python-setuptools
+apt-get install python-setuptools -y
 echo 'Done'
 
 # Installing trac
@@ -93,13 +93,13 @@ echo 'Done'
 # Moving on to python-sqlite
 
 echo 'Installing python-sqlite'
-apt-get install python-sqlite
+apt-get install python-sqlite -y
 echo 'Done'
 
 # Now py bindings to svn
 
 echo 'Installing python-subversion'
-apt-get install python-subversion
+apt-get install python-subversion -y
 echo 'Done'
 
 # Creating trac layout
@@ -136,7 +136,7 @@ echo 'Done'
 # Lets install openssl just in case
 
 echo 'Installing openssl'
-apt-get install openssl
+apt-get install openssl -y
 echo 'Done'
 
 # Lets create apache private key

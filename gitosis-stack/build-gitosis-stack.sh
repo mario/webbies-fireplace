@@ -19,19 +19,19 @@ echo 'Done'
 # Somebody missed essential packages
 
 echo 'Fetching and installing essential log packages'
-apt-get install syslog-ng logrotate
+apt-get install syslog-ng logrotate -y
 echo 'Done'
 
 # Install git
 
 echo 'Fetching and installing git'
-apt-get install git-core
+apt-get install git-core -y
 echo 'Done'
 
 # We will need python-setuptools
 
 echo 'Fetching and installing python-setuptools'
-apt-get install python-setuptools
+apt-get install python-setuptools -y
 echo 'Done'
 
 # Fetching and installing gitosis
