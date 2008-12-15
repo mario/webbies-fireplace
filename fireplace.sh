@@ -41,7 +41,7 @@ cd gitosis-stack
 ;;
 3)
 cd trac-stack
-./build-trac-stack.sh
+./build-trac-stack.sh $2 $3
 ;;
 4)
 cd grails-stack
