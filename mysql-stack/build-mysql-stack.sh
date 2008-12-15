@@ -19,7 +19,8 @@ echo 'Done'
 
 # Generate mysql password
 echo 'Generating mysql root pass'
-PASS= < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c8
+PASS=$(tr -dc "[:alnum:][:punct:]" < /dev/urandom \
+             | head -c $( RANDOM=$$; echo $(( $RANDOM % (8 + 1) + 8 
 echo 'Done'
 
 # Setting up root pass for mysql
