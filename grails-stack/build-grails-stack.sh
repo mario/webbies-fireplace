@@ -109,7 +109,7 @@ wget http://dist.codehaus.org/grails/grails-bin-1.0.4.tar.gz
 mkdir /usr/lib/grails
 cd /usr/lib/grails/
 mv ~/grails-bin-1.0.4.tar.gz .
-tar -zxvf grails-bin-1.0.4.tar.gz
+tar zxvf grails-bin-1.0.4.tar.gz
 echo 'Done'
 
 echo '*****************************************************'
