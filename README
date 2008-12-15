@@ -1,0 +1,28 @@
+========================
+Webbies fireplace
+========================
+
+A set of server deployment scripts, initially targeted
+at Webby's, but should work anywhere. 
+
+To get started with deployment:
+
+git clone git://github.com/mario/webbies-fireplace.git
+cd webbies-fireplace/$stack
+./build-$stack.sh
+
+In some cases, you might need to do:
+
+chmod +x build-$stack.sh
+
+In case you don't have git installed:
+
+Debian/Ubuntu: sudo apt-get update && sudo apt-get install git-core
+Fedora: yum install git-core
+openSUSE: zypper install git 
+
+Current maintainer:
+Mario Danic <mario.danic@gmail.com>
+
+Contributors:
+Ramaze stack - Pistos
