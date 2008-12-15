@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo 'Copyright 2008-2009 @ Mario Danic <mario.danic@gmail.com>'
-echo 'Ramaze stack is copyright 2008-2009 @ Pistos'
+echo 'Copyright (C) 2008-2009  Mario Danic <mario.danic@gmail.com>'
+echo 'Ramaze stack is copyright (c) 2008-2009 Pistos'
 echo "Welcome to Webby's fireplace"
 echo 'This tiny script is a wrapper around various'
 echo 'provided server deployment scripts.'
