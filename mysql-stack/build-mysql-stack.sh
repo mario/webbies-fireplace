@@ -25,7 +25,7 @@ echo 'Done'
 
 # Setting up root pass for mysql
 echo 'Setting up root mysql pass'
-mysqladmin -u root -p password $PASS
+mysqladmin -u root password $PASS
 echo 'Done'
 
 echo '*****************************************************'
