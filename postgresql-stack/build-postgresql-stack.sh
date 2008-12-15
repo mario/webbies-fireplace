@@ -25,7 +25,7 @@ echo 'Done'
 
 # Setting up postgres user pass
 echo 'Setting up postgres user pass'
-sudo -u postgres psql -c "ALTER USER postgres WITH ENCRYPTED PASSWORD $PASS;"
+sudo -u postgres psql -c "ALTER USER postgres WITH ENCRYPTED PASSWORD '$PASS';"
 echo 'Done'
 
 echo '*****************************************************'
