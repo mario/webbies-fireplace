@@ -22,7 +22,7 @@ cecho ()                     # Color-echo.
                              # Argument $1 = message
                              # Argument $2 = color
 {
-local default_msg="No message passed."
+local default_msg=""
                               # Doesn't really need to be a local variable.
  
 message=${1:-$default_msg}   # Defaults to default message.
