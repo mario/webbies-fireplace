@@ -12,14 +12,9 @@ echo 'Fetching and installing essential log packages'
 apt-get install syslog-ng logrotate -y
 echo 'Done'
 
-# Making sure mysql wont ask us questions
-echo 'Be silent mysql'
-export DEBIAN_FRONTEND=noninteractive
-echo 'Done'
-
-# Lets install mysql-server
+# Lets install mysql-server in silent mode
 echo 'Mysql server installation'
-sudo apt-get install mysql-server
+DEBIAN_FRONTEND=noninteractive apt-get install mysql-server
 echo 'Done'
 
 # Generate mysql password
