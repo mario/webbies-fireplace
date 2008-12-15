@@ -6,6 +6,17 @@ echo "Welcome to Webby's fireplace"
 echo 'This tiny script is a wrapper around various'
 echo 'provided server deployment scripts.'
 
+
+help () {
+echo "First argument to this script is stack's number to install"
+echo '1)Ramaze stack'
+echo '2)Gitosis stack'
+echo '3)Trac stack'
+echo '4)Grails stack'
+echo '5)Mysql stack'
+echo '6)PostgreSQL stack'
+}
+
 user_input () {
 echo 'Please select desired stack:'
 echo '1)Ramaze stack'
