@@ -20,6 +20,13 @@ export STACK=ramaze-stack
 cd webbies-fireplace/$STACK
 ./build-$STACK.sh
 
+Alternatively, you can:
+
+cd webbies-fireplace
+./fireplace.sh
+
+And pick a stack there!
+
 -----------------------
 Installing git:
 -----------------------
