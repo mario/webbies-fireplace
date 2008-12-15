@@ -14,7 +14,7 @@ echo 'Done'
 
 # Lets install mysql-server in silent mode
 echo 'Mysql server installation'
-DEBIAN_FRONTEND=noninteractive apt-get install mysql-server
+DEBIAN_FRONTEND=noninteractive apt-get install mysql-server -y
 echo 'Done'
 
 # Generate mysql password
