@@ -98,6 +98,6 @@ echo '*****************************************************'
 echo
 echo 'ALL DONE!'
 echo 'Browse to http://your-webbys-ip to see a apache welcome page.'
-echo 'Browse to http://your-webbys-ip:8080 to see a apache welcome page.'
+echo 'Browse to http://your-webbys-ip:8080 to see a tomcat welcome page.'
 echo
 echo '*****************************************************'
