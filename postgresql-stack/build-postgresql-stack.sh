@@ -18,7 +18,7 @@ sudo apt-get install postgresql -y
 echo 'Done'
 
 # Generate postgresql password
-echo 'Generating postgresql root pass'
+echo 'Generating postgresql user pass'
 PASS=$(tr -dc "[:alnum:][:punct:]" < /dev/urandom \
              | head -c $( RANDOM=$$; echo $(( $RANDOM % (8 + 1) + 8))))
 echo 'Done'
