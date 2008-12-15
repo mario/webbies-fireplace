@@ -187,7 +187,6 @@ echo 'Done'
 # Generate trac user password
 
 echo 'Generating password for user'
-echo 'Generating mysql root pass'
 PASS=$(tr -dc "[:alnum:][:punct:]" < /dev/urandom \
              | head -c $( RANDOM=$$; echo $(( $RANDOM % (8 + 1) + 8))))
 echo 'Done'
@@ -195,7 +194,6 @@ echo 'Done'
 # Creating initial user
 
 echo 'Creating initial user'
-echo 'Please enter password for your trac/subversion user'
 htpasswd -bcm /var/apache/apache-trac-fireplace/htpasswd $DEVELOPER $PASS
 echo 'Done'
 
