@@ -9,12 +9,10 @@ else
   echo 'Args check OK'
 fi
 
-echo 'Path to your repository will be: /var/svn/repositories/'"$1"
-echo 'Please remember this as you will need to enter it when configuring trac'
-sleep 5
 
 PROJECT=$1
 DEVELOPER=$2
+SVNPATH='/var/svn/repositories/'"$PROJECT"
 
 # Update list of available packages
 
@@ -111,7 +109,8 @@ echo 'Done'
 # Creating initial trac project
 
 echo 'Creating trac project'
-trac-admin /var/trac/projects/"$PROJECT" initenv
+trac-admin /var/trac/projects/"$PROJECT" initenv $PROJECT sqlite:db/trac.db svn $SVNPATH
+
 echo 'Done'
 
 # Setting up trac config
@@ -184,21 +183,26 @@ echo 'Reloading apache'
 /etc/init.d/apache2 reload
 echo 'Done'
 
+
+# Generate trac user password
+
+echo 'Generating password for user'
+echo 'Generating mysql root pass'
+PASS=$(tr -dc "[:alnum:][:punct:]" < /dev/urandom \
+             | head -c $( RANDOM=$$; echo $(( $RANDOM % (8 + 1) + 8))))
+echo 'Done'
+
 # Creating initial user
 
 echo 'Creating initial user'
 echo 'Please enter password for your trac/subversion user'
-htpasswd -cm /var/apache/apache-trac-fireplace/htpasswd $DEVELOPER
+htpasswd -bcm /var/apache/apache-trac-fireplace/htpasswd $DEVELOPER $PASS
 echo 'Done'
 
 # Setting admin user for trac project
 
-echo 'Setting admin user for trac project'
-echo 'NOTE!'
-echo 'Please input the following when asked for input:'
-echo 'permission add' "$DEVELOPER" 'TRAC_ADMIN'
-echo 'Then click ctrl+c to exit the console'
-trac-admin /var/trac/projects/$PROJECT
+echo 'Setting admin user for trac project '"$PROJECT"
+trac-admin /var/trac/projects/$PROJECT permission add $DEVELOPER TRAC_ADMIN
 echo 'Done'
 
 echo '*************************************************************************'
@@ -208,6 +212,7 @@ echo 'You should now be able to do your trac stuff with your server '
 echo 'at a https://your-webbys-ip/projects/'"$PROJECT" 'addy'
 echo 'Your subversion repo is available at:'
 echo 'https://your-webbys-ip/svn/'"$PROJECT"
+echo 'Password for user '"$DEVELOPER"' at project '"$PROJECT"' is: '"$PASS"
 echo
 echo '*************************************************************************'
 
