@@ -12,6 +12,7 @@ git clone git://github.com/mario/webbies-fireplace.git
 
 # With wget:
 wget -O webbies-fireplace.tar.gz http://github.com/mario/webbies-fireplace/tarball/master
+tar zxvf webbies-fireplace.tar.gz
 
 Then, pick a stack, and build it:
 
