@@ -36,19 +36,38 @@ echo 'Fetching and installing apache mods'
 sudo apt-get install openjdk-6-jdk -y
 echo 'Done'
 
-# Doing stuff with Tomcat
-echo 'Doing stuff with Tomcat'
+# Fetching and unpacking tomcat6
+echo 'Fetching and unpacking tomcat'
 cd /usr/share
 wget http://mirror.nyi.net/apache/tomcat/tomcat-6/v6.0.18/bin/apache-tomcat-6.0.18.tar.gz
 tar zxvf apache-tomcat-6.0.18.tar.gz
+echo 'Done'
+
+# Lets remove apache- prefix
+echo 'Renaming apache-tomcat dir'
 mv apache-tomcat-6.0.18 tomcat-6.0.18
+echo 'Done'
+
+# We need user and a group
+echo 'Creating tomcat user and group'
 useradd -M tomcat
 grupadd tomcat
+echo 'Done'
+
+# Webapps should be owned by tomcat
+echo 'Making webapps owned by tomcat:tomcat'
 cd tomcat-6.0.18
 chown -R tomcat:tomcat webapps; chmod -R 775 webapps
-usermod -aG tomcat www-data
-cd bin && chmod 755 shutdown.sh startup.sh && cd ..
+echo 'Done'
 
+# User tomcat goes into apache group
+echo 'Messing with tomcat user'
+usermod -aG tomcat www-data
+echo 'Done'
+
+# Making thing work 
+echo '755 on shutdown and startup'
+cd bin && chmod 755 shutdown.sh startup.sh && cd ..
 echo 'Done'
 
 # Lets throw in Apache 
@@ -58,7 +77,6 @@ chown tomcat.tomcat /etc/apache2/workers.properties
 cp ~/webbies-fireplace/grails-stack/sources/etc/apache2/sites-available/java_example /etc/apache2/sites-available
 cp ~/webbies-fireplace/grails-stack/sources/usr/share/tomcat-6.0.18/conf/server.xml /usr/share/tomcat-6.0.18/conf/server.xml
 echo "Include /usr/share/tomcat-6.0.18/conf/auto/mod_jk.conf" >> /etc/apache2/apache2.conf
-
 echo 'Done'
 
 # Stop Apache
