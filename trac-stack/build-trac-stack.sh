@@ -150,7 +150,7 @@ echo 'Done'
 
 echo 'Creating a certificate'
 cd /etc/ssl/certs
-openssl req -new -x509 -days 365 -key ../private/apache-trac-fireplace.key  -out apache-trac-fireplace.crt
+openssl req -batch -new -x509 -days 365 -key ../private/apache-trac-fireplace.key  -out apache-trac-fireplace.crt
 echo 'Done'
 
 # Lets make things secure
