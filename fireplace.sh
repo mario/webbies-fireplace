@@ -12,6 +12,7 @@ echo '1)Ramaze stack'
 echo '2)Gitosis stack'
 echo '3)Trac stack'
 echo '4)Grails stack'
+echo '5)Mysql stack'
 read stack
 do_work $stack
 }
@@ -33,6 +34,10 @@ cd trac-stack
 4)
 cd grails-stack
 ./build-grails-stack.sh
+;;
+5)
+cd mysql-stack
+./build-mysql-stack.sh
 ;;
 *)
 echo 'Wrong selection'
