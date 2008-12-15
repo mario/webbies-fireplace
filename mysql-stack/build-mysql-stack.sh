@@ -31,6 +31,6 @@ echo 'Done'
 echo '*****************************************************'
 echo
 echo 'ALL DONE!'
-echo 'Your mysql root password is:'"$PASS"
+echo 'Your mysql root password is: '"$PASS"
 echo
 echo '*****************************************************'
