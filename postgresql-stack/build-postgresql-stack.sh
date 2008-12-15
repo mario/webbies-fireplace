@@ -17,8 +17,8 @@ echo 'Installing PostgreSQL'
 sudo apt-get install postgresql -y
 echo 'Done'
 
-# Generate mysql password
-echo 'Generating mysql root pass'
+# Generate postgresql password
+echo 'Generating postgresql root pass'
 PASS=$(tr -dc "[:alnum:][:punct:]" < /dev/urandom \
              | head -c $( RANDOM=$$; echo $(( $RANDOM % (8 + 1) + 8))))
 echo 'Done'
