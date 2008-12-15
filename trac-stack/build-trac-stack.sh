@@ -206,8 +206,8 @@ echo 'Done'
 echo '*************************************************************************'
 echo
 echo 'ALL DONE!'
-echo 'You should now be able to do your trac stuff with your server '
-echo 'at a https://your-webbys-ip/projects/'"$PROJECT" 'addy'
+echo 'You should now be able to do your trac stuff at: '
+echo 'https://your-webbys-ip/projects/'"$PROJECT"
 echo 'Your subversion repo is available at:'
 echo 'https://your-webbys-ip/svn/'"$PROJECT"
 echo 'Password for user '"$DEVELOPER"' at project '"$PROJECT"' is: '"$PASS"
