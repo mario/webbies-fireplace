@@ -12,8 +12,8 @@ echo 'Fetching and installing essential log packages'
 apt-get install syslog-ng logrotate -y
 echo 'Done'
 
-# Lets install lamp-server in silent mode
-echo 'LAMP server installation'
+# Lets install lamp server in silent mode
+echo 'Installing LAMP server'
 DEBIAN_FRONTEND=noninteractive apt-get install apache2 php5-mysql libapache2-mod-php5 mysql-server -y
 echo 'Done'
 
