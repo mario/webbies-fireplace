@@ -192,8 +192,7 @@ echo 'Done'
 # Generate trac user password
 
 echo 'Generating password for user'
-PASS=$(tr -dc "[:alnum:][:punct:]" < /dev/urandom \
-             | head -c $( RANDOM=$$; echo $(( $RANDOM % (8 + 1) + 8))))
+PASS=$(head -c 500 /dev/urandom | tr -dc a-z0-9A-Z | head -c 8)
 echo 'Done'
 
 # Creating initial user
