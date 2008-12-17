@@ -14,7 +14,7 @@ echo 'Done'
 
 # Lets install lamp-server in silent mode
 echo 'LAMP server installation'
-DEBIAN_FRONTEND=noninteractive apt-get install lamp-server^ -y
+DEBIAN_FRONTEND=noninteractive apt-get install apache2 php5-mysql libapache2-mod-php5 mysql-server -y
 echo 'Done'
 
 # Generate mysql password
@@ -25,7 +25,7 @@ echo 'Done'
 
 # Setting up root pass for mysql
 echo 'Setting up root mysql pass'
-mysqladmin -u root password '$PASS'
+mysqladmin -u root -p password '$PASS'
 echo 'Done'
 
 echo '*****************************************************'
