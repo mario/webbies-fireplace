@@ -15,6 +15,7 @@ echo '3)Trac stack'
 echo '4)Grails stack'
 echo '5)Mysql stack'
 echo '6)PostgreSQL stack'
+echo '7)LAMP stack'
 }
 
 user_input () {
@@ -25,6 +26,7 @@ echo '3)Trac stack'
 echo '4)Grails stack'
 echo '5)Mysql stack'
 echo '6)PostgreSQL stack'
+echo '7)LAMP stack'
 read stack
 do_work $stack
 }
@@ -54,6 +56,10 @@ cd mysql-stack
 6)
 cd postgresql-stack
 ./build-postgresql-stack.sh
+;;
+7)
+cd lamp-stack
+./build-lamp-stack.sh
 ;;
 *)
 echo 'Wrong selection'
