@@ -19,6 +19,11 @@ echo 'Fetching and installing apache'
 apt-get install apache2 -y
 echo 'Done'
 
+# We don't like apache errors
+echo 'Doing some magic to remove apache warnings'
+echo "ServerName localhost" | sudo tee /etc/apache2/conf.d/fqdn
+echo 'Done'
+
 # Fetching and installing apache modules
 
 echo 'Fetching and installing apache mods'
