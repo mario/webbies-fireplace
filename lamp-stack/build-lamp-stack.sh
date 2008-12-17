@@ -13,7 +13,7 @@ apt-get install syslog-ng logrotate -y
 echo 'Done'
 
 # Lets install lamp-server in silent mode
-echo 'Mysql server installation'
+echo 'LAMP server installation'
 DEBIAN_FRONTEND=noninteractive apt-get install lamp-server^ -y
 echo 'Done'
 
