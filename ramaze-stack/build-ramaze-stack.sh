@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Terminate script on any error
+set -e
+
 # Update system config
 
 EMERGE_OPTIONS="-tv"
