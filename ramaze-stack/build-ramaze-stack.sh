@@ -1,5 +1,13 @@
 #!/bin/bash
 
+# Check that we're running under Gentoo (and not, say Ubuntu)
+
+which emerge 2>/dev/null
+if [[ $? == 1 ]]; then
+    echo '"emerge" command not found.  Are you not running Gentoo Linux?'
+    exit 1
+fi
+
 # Terminate script on any error
 set -e
 
