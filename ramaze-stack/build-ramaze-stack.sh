@@ -26,7 +26,7 @@ echo '-3' | etc-update
 # Install major packages
 
 emerge ${EMERGE_OPTIONS} portage
-echo '-2' | etc-update
+echo '-7' | etc-update
 
 emerge ${EMERGE_OPTIONS} syslog-ng logrotate
 emerge ${EMERGE_OPTIONS} ruby "=postgresql-8.3.1" nginx screen
