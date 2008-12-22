@@ -13,8 +13,8 @@ set -e
 
 # Update system config
 
-#EMERGE_OPTIONS="-tv"
-EMERGE_OPTIONS="-atv"
+EMERGE_OPTIONS="-tv"
+#EMERGE_OPTIONS="-atv"
 cat sources/etc/make.conf.appendum >> /etc/make.conf
 cp -r sources/etc/portage /etc
 echo 'rm_opts=""' >> /etc/etc-update.conf
@@ -31,7 +31,8 @@ echo '-7' | etc-update
 emerge ${EMERGE_OPTIONS} syslog-ng logrotate
 emerge ${EMERGE_OPTIONS} ruby "=postgresql-8.3.1" nginx screen
 
-emerge --config =postgresql-8.3.1
+EMERGED_POSTGRESQL=`egrep 'completed emerge.*postgres' /var/log/emerge.log | tail -n 1 | awk '{print $8}' | awk -F / '{print $2}'`
+emerge --config "=${EMERGED_POSTGRESQL}"
 rc-update add postgresql default
 
 # Install Rubygems
