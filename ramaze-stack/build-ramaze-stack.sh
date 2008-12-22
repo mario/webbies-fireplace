@@ -5,19 +5,20 @@ set -e
 
 # Update system config
 
-EMERGE_OPTIONS="-tv"
-#EMERGE_OPTIONS="-atv"
+#EMERGE_OPTIONS="-tv"
+EMERGE_OPTIONS="-atv"
 cat sources/etc/make.conf.appendum >> /etc/make.conf
-cp sources/etc/portage/* /etc/portage
+cp -r sources/etc/portage /etc
 echo 'rm_opts=""' >> /etc/etc-update.conf
 echo 'mv_opts=""' >> /etc/etc-update.conf
 echo 'cp_opts=""' >> /etc/etc-update.conf
 
+echo '-3' | etc-update
+
 # Install major packages
 
-emerge ${EMERGE_OPTIONS} "=app-shells/bash-3.2_p17-r1" portage
-
-echo '-3' | etc-update
+emerge ${EMERGE_OPTIONS} portage
+echo '-2' | etc-update
 
 emerge ${EMERGE_OPTIONS} syslog-ng logrotate
 emerge ${EMERGE_OPTIONS} ruby "=postgresql-8.3.1" nginx screen
