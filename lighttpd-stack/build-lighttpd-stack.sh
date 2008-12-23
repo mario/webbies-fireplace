@@ -37,12 +37,15 @@ echo 'Done'
 echo 'Creating firewall rule for OpenSSH'
 ufw allow OpenSSH
 echo 'Done'
- 
+
+# Setting up ufw for lighttpd
+
 echo 'Creating firewall rule for lighttpd'
 ufw allow http
 echo 'Done'
  
-# Lets install lamp server in silent mode
+# Lets install llmp server in silent mode
+
 echo 'Installing Lighttpd/MySQL/PHP5'
 DEBIAN_FRONTEND=noninteractive apt-get install lighttpd php5-cgi php5-mysql php5-gd php5 mysql-server -y
 echo 'Done'
@@ -70,7 +73,7 @@ lighttpd-enable-mod fastcgi
 echo '*****************************************************'
 echo
 echo 'ALL DONE!'
-echo 'Browse to http://your-webbys-ip to see a apache welcome page.'
+echo 'Browse to http://your-webbys-ip to see a lighttpd welcome page.'
 echo 'Browse to http://your-webbys-ip/phpmyadmin to see a phpmyadmin login page.'
 echo 'Your mysql root password is: '"$PASS"
 echo
