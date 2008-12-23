@@ -14,7 +14,7 @@ echo 'Done'
 
 # Lets install lamp server in silent mode
 echo 'Installing LAMP server'
-DEBIAN_FRONTEND=noninteractive apt-get install apache2 php5-mysql libapache2-mod-php5 mysql-server -y
+DEBIAN_FRONTEND=noninteractive apt-get install apache2 php5-mysql libapache2-mod-auth-mysql php5 mysql-server -y
 echo 'Done'
 
 # We don't like apache errors
@@ -30,6 +30,30 @@ echo 'Done'
 # Setting up root pass for mysql
 echo 'Setting up root mysql pass'
 mysqladmin -u root password $PASS
+echo 'Done'
+
+# Most people need mod_rewrite
+
+echo 'Enabling mod_rewrite'
+a2enmod rewrite
+echo 'Done'
+
+# Installing phpmysqladmin
+
+echo 'Getting up and ready with phpmysqladmin'
+apt-get install phpmyadmin
+echo 'Done'
+
+# Setting up phpmysqladmin
+
+echo 'Setting up phpmysqladmin'
+echo "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
+echo 'Done'
+
+# Restarting apache
+
+echo 'Restarting apache'
+/etc/init.d/apache2 restart
 echo 'Done'
 
 echo '*****************************************************'
