@@ -28,13 +28,13 @@ detect_distro()
   elif [ -f /etc/redhat-release ]; then
     if grep -q "Red Hat Enterprise Linux" /etc/redhat-release; then
 	    DISTRIB_ID="Red Hat Enterprise Linux"
-	elif grep -q "CentOS" /etc/redhat-release; then
+    elif grep -q "CentOS" /etc/redhat-release; then
 	    DISTRIB_ID="CentOS"
-	elif grep -q "Scientific Linux" /etc/redhat-release; then
+    elif grep -q "Scientific Linux" /etc/redhat-release; then
 	    DISTRIB_ID="Scientific Linux"
-	else
+    else
 	    DISTRIB_ID="Red Hat Unknown"
-	fi
+    fi
 	DISTRIB_RELEASE="($(sed -e 's/.* \([0-9]\).*/\1/' /etc/redhat-release))"
   elif [ -f /etc/slackware-version ]; then
     DISTRIB_ID="Slackware"
