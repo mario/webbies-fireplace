@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # utils-cecho.sh: Echoing text messages in color.
 
 # Modify this script for your own purposes.

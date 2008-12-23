@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Update list of available packages
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # We need to check if we have a project name and developer as arguments
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # utils-distro.sh: Detect distribution flavour.
 
 # General distribution info file
