@@ -20,12 +20,12 @@ select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lam
 		echo 'Developer name:'
 		read $DEVELOPER
 		cd "$stackname"-stack
-		./build-"$stackname"-stack $PROJECT $DEVELOPER
+		./build-"$stackname"-stack.sh $PROJECT $DEVELOPER
    elif [ "$stackname" = "ramaze" -o "$stackname" = "gitosis" \
          -o "$stackname" = "grails" -o "$stackname" = "mysql"  \
 		 -o "$stackname" = "postgresql" -o "$stackname" = "lamp" ]; then
 		cd "$stackname"-stack
-		./build-"$stackname"-stack
+		./build-"$stackname"-stack.sh
    else 
 		echo "Bad choice, going out for a walk!"
 		exit 2
