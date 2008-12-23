@@ -33,6 +33,12 @@ echo 'Enabling ufw'
 ufw enable
 echo 'Done'
 
+# Setting up ufw for openSSH
+
+echo 'Creating firewall rule for OpenSSH'
+ufw allow OpenSSH
+echo 'Done'
+
 # Fetching and installing apache
 
 echo 'Fetching and installing apache'

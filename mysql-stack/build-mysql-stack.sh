@@ -32,6 +32,12 @@ echo 'Enabling ufw'
 ufw enable
 echo 'Done'
 
+# Setting up ufw for openSSH
+
+echo 'Creating firewall rule for OpenSSH'
+ufw allow OpenSSH
+echo 'Done'
+
 # Lets install mysql-server in silent mode
 echo 'Mysql server installation'
 DEBIAN_FRONTEND=noninteractive apt-get install mysql-server -y

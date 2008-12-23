@@ -42,6 +42,12 @@ echo 'Enabling ufw'
 ufw enable
 echo 'Done'
 
+# Setting up ufw for openSSH
+
+echo 'Creating firewall rule for OpenSSH'
+ufw allow OpenSSH
+echo 'Done'
+
 # Install git
 
 echo 'Fetching and installing git'
