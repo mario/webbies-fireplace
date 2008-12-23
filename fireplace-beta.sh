@@ -10,7 +10,7 @@ echo 'This is beta!!'
 
 PS3="Your choice: "
 
-select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lamp" "subversion" "quit"; do
+select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lamp" "subversion" "lighttpd" "quit"; do
 
    if [ "$stackname" = "quit" ]; then
 	    exit 0

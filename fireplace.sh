@@ -17,6 +17,7 @@ echo '5)Mysql stack'
 echo '6)PostgreSQL stack'
 echo '7)LAMP stack'
 echo '8)Subversion stack'
+echo '9)Lighttpd stack'
 }
 
 user_input () {
@@ -29,6 +30,7 @@ echo '5)Mysql stack'
 echo '6)PostgreSQL stack'
 echo '7)LAMP stack'
 echo '8)Subversion stack'
+echo '9)Lighttpd stack'
 read stack
 do_work $stack
 }
@@ -66,6 +68,10 @@ cd lamp-stack
 8)
 cd subversion-stack
 ./build-subversion-stack.sh $2 $3
+;;
+9)
+cd lighttpd-stack
+./build-lighttpd-stack.sh
 ;;
 *)
 echo 'Wrong selection'
