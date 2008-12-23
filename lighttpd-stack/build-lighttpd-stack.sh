@@ -67,8 +67,11 @@ ln -sf /etc/phpmyadmin/lighttpd.conf /etc/lighttpd/conf-enabled/
 echo 'Done'
 
 # Reloading lighttpd with php support
+
+echo 'Reloading lighttpd with php support'
 lighttpd-enable-mod fastcgi
 /etc/init.d/lighttpd reload
+echo 'Done'
 
 echo '*****************************************************'
 echo
