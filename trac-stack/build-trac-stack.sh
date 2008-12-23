@@ -26,6 +26,26 @@ echo 'Fetching and installing essential log packages'
 apt-get install syslog-ng logrotate -y
 echo 'Done'
 
+# Install ufw 
+
+echo 'Installing ufw'
+apt-get install ufw
+echo 'Done'
+
+# Configure ufw
+
+echo 'Configuring ufw'
+ufw default DENY
+ufw logging ON
+ufw app default ALLOW
+echo 'Done'
+
+# Enabling ufw
+
+echo 'Enabling ufw'
+ufw enable
+echo 'Done'
+
 # Install Subversion
 
 echo 'Fetching and installing svn'
