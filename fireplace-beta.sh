@@ -14,7 +14,7 @@ select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lam
 
    if [ "$stackname" = "quit" ]; then
 	    exit 0
-   elif [ "$stackname" = "trac" -o "$opt" = "subversion" ]; then
+   elif [ "$stackname" = "trac" -o "$stackname" = "subversion" ]; then
 	    echo 'Project name:'
 		read $PROJECT
 		echo 'Developer name:'
