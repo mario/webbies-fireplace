@@ -99,7 +99,7 @@ ufw_tcp () {
 
 echo "Creating custom firewall rule"
 
-if [ $1 = 2 ]
+if [ $2 = 1 ]
   ufw deny "$1/tcp"
 else
   ufw allow "$1/tcp"
