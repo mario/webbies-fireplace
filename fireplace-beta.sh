@@ -10,8 +10,20 @@ echo 'This is beta!!'
 
 PS3="Your choice: "
 
-select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lamp" "subversion" "quit"
-  do
+select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lamp" "subversion" "quit"; do
+
+   if [ "$stackname" = "quit" ]; then
+	    quit 
+	    exit 0
+   elif [ "$stackname" = "trac" -o "$opt" = "subversion" ]; then
+	    echo 'Project name:'
+		read $PROJECT
+		echo 'Developer name:'
+		read $DEVELOPER
+		cd "$stackname"-stack
+		./build-"$stackname"-stack
+   elif [ "$
+
   [ "$stackname" = "quit" ]  && exit 0
   cd $stackname-stack
   ./build-$stackname-stack $2 $3
