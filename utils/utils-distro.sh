@@ -35,6 +35,7 @@ detect_distro()
 	else
 	    DISTRIB_ID="Red Hat Unknown"
 	fi
+	DISTRIB_RELEASE="($(sed -e 's/.* \([0-9]\).*/\1/' /etc/redhat-release))"
   elif [ -f /etc/slackware-version ]; then
     DISTRIB_ID="Slackware"
   elif [ -f /etc/release ]; then
