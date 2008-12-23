@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Check that we're running under Gentoo (and not, say Ubuntu)
+# Check that Portage is on the system.
 
 which emerge 2>/dev/null
 if [[ $? == 1 ]]; then
