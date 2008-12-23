@@ -77,6 +77,6 @@ esac
 if [ $# -ne 1 ]; then
   user_input
 else
-  do_work $1
+  do_work $1 $2 $3
 fi
 
