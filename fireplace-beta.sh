@@ -8,25 +8,11 @@ echo 'provided server deployment scripts.'
 
 echo 'This is beta!!'
 
-do_work ()
-{
-cd $1-stack
-./build-$1-stack $2 $3
-}
-
-user input ()
-{
 PS3="Your choice: "
 
 select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lamp" "subversion" "quit"
   do
-  [ $stackname = "quit" ]  && exit 0
-  
+  [ "$stackname" = "quit" ]  && exit 0
+  cd $stackname-stack
+  ./build-$stackname-stack $2 $3
 done
-}
-
-if [ $# -ne 1 -a $# -ne 3 ]; then
-  user_input
-else
-  do_work $1 $2 $3
-fi
