@@ -37,6 +37,12 @@ echo 'Installing LAMP server'
 DEBIAN_FRONTEND=noninteractive apt-get install apache2 php5-mysql libapache2-mod-auth-mysql php5 mysql-server -y
 echo 'Done'
 
+# Setting up ufw for apache
+
+echo 'Creating firewall rule for apache2'
+ufw allow "Apache Full"
+echo 'Done'
+
 # We don't like apache errors
 echo 'Doing some magic to remove apache warnings'
 echo "ServerName localhost" | sudo tee /etc/apache2/conf.d/fqdn

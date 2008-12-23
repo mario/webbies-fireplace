@@ -70,6 +70,12 @@ echo 'Fetching and installing apache'
 apt-get install apache2 -y
 echo 'Done'
 
+# Setting up ufw for apache
+
+echo 'Creating firewall rule for apache2'
+ufw allow "Apache Full"
+echo 'Done'
+
 # We don't like apache errors
 echo 'Doing some magic to remove apache warnings'
 echo "ServerName localhost" | sudo tee /etc/apache2/conf.d/fqdn
@@ -226,6 +232,7 @@ echo 'Done'
 echo 'Setting admin user for trac project '"$PROJECT"
 trac-admin /var/trac/projects/$PROJECT permission add $DEVELOPER TRAC_ADMIN
 echo 'Done'
+
 
 echo '*************************************************************************'
 echo

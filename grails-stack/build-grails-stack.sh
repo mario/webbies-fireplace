@@ -127,6 +127,12 @@ echo 'Creating firewall rule for tomcat'
 ufw allow 8080/tcp
 echo 'Done'
 
+# Setting up ufw for apache
+
+echo 'Creating firewall rule for apache2'
+ufw allow "Apache Full"
+echo 'Done'
+
 # Restarting tomcat and apache
 echo 'Restarting tomcat and apache'
 /etc/init.d/tomcat start
