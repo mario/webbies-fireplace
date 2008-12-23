@@ -23,7 +23,7 @@ select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lam
 		./build-"$stackname"-stack.sh $PROJECT $DEVELOPER
    elif [ "$stackname" = "ramaze" -o "$stackname" = "gitosis" \
          -o "$stackname" = "grails" -o "$stackname" = "mysql"  \
-		 -o "$stackname" = "postgresql" -o "$stackname" = "lamp" ]; then
+		 -o "$stackname" = "postgresql" -o "$stackname" = "lamp" -o "$stackname" = "lighttpd" ]; then
 		cd "$stackname"-stack
 		./build-"$stackname"-stack.sh
    else 
