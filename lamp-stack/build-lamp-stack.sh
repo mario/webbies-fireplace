@@ -41,7 +41,7 @@ echo 'Done'
 # Installing phpmysqladmin
 
 echo 'Getting up and ready with phpmysqladmin'
-apt-get install phpmyadmin
+DEBIAN_FRONTEND=noninteractive apt-get install phpmyadmin -y
 echo 'Done'
 
 # Setting up phpmysqladmin
