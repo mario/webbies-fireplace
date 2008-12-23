@@ -13,7 +13,6 @@ PS3="Your choice: "
 select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lamp" "subversion" "quit"; do
 
    if [ "$stackname" = "quit" ]; then
-	    quit 
 	    exit 0
    elif [ "$stackname" = "trac" -o "$opt" = "subversion" ]; then
 	    echo 'Project name:'
@@ -21,7 +20,7 @@ select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lam
 		echo 'Developer name:'
 		read $DEVELOPER
 		cd "$stackname"-stack
-		./build-"$stackname"-stack
+		./build-"$stackname"-stack $PROJECT $DEVELOPER
    elif [ "$
 
   [ "$stackname" = "quit" ]  && exit 0
