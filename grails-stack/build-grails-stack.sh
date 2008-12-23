@@ -13,6 +13,26 @@ echo 'Fetching and installing essential log packages'
 apt-get install syslog-ng logrotate -y
 echo 'Done'
 
+# Install ufw 
+
+echo 'Installing ufw'
+apt-get install ufw
+echo 'Done'
+
+# Configure ufw
+
+echo 'Configuring ufw'
+ufw default DENY
+ufw logging ON
+ufw app default ALLOW
+echo 'Done'
+
+# Enabling ufw
+
+echo 'Enabling ufw'
+ufw enable
+echo 'Done'
+
 # Fetching and installing apache
 
 echo 'Fetching and installing apache'
@@ -99,6 +119,12 @@ echo 'Done'
 # Setting up GRAILS & Java environment
 echo 'Setting up grails and java environment'
 cp ~/webbies-fireplace/grails-stack/sources/etc/environment /etc/environment
+echo 'Done'
+
+# Setting up ufw for tomcat
+
+echo 'Creating firewall rule for tomcat'
+ufw allow 8080/tcp
 echo 'Done'
 
 # Restarting tomcat and apache
