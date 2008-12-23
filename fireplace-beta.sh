@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo 'Copyright (C) 2008-2009  Mario Danic <mario.danic@gmail.com>'
 echo 'Ramaze stack is copyright (c) 2008-2009 Pistos'
