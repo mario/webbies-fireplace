@@ -74,7 +74,7 @@ exit 2
 esac
 }
 
-if [ $# -ne 1 ]; then
+if [ $# -ne 1 -o $# -ne 3]; then
   user_input
 else
   do_work $1 $2 $3
