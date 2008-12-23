@@ -60,6 +60,7 @@ echo '*****************************************************'
 echo
 echo 'ALL DONE!'
 echo 'Browse to http://your-webbys-ip to see a apache welcome page.'
+echo 'Browse to http://your-webbys-ip/phpmyadmin to see a phpmyadmin login page.'
 echo 'Your mysql root password is: '"$PASS"
 echo
 echo '*****************************************************'
