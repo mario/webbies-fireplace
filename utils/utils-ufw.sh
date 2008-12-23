@@ -91,3 +91,20 @@ fi
 echo 'Done'
 
 }
+
+ufw_tcp () {
+
+# Creating custom firewall tcp rule
+# Argument $1 is port, Argument $2 is what to do
+
+echo "Creating custom firewall rule"
+
+if [ $1 = 2 ]
+  ufw deny "$1/tcp"
+else
+  ufw allow "$1/tcp"
+fi
+
+echo 'Done'
+
+}
