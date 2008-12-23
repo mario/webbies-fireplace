@@ -29,7 +29,7 @@ echo 'Done'
 # Install ufw 
 
 echo 'Installing ufw'
-apt-get install ufw
+apt-get install ufw -y
 echo 'Done'
 
 # Configure ufw
