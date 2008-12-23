@@ -24,12 +24,10 @@ select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lam
    elif [ "$stackname" = "ramaze" -o "$stackname" = "gitosis" \
          -o "$stackname" = "grails" -o "$stackname" = "mysql"  \
 		 -o "$stackname" = "postgresql" -o "$stackname" = "lamp"]
+		cd "$stackname"-stack
+		./build-"$stackname"-stack
    else 
 		echo 'Bad choice, going out for a walk!"
 		exit 2
    fi
-
-  [ "$stackname" = "quit" ]  && exit 0
-  cd $stackname-stack
-  ./build-$stackname-stack $2 $3
 done
