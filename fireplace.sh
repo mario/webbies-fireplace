@@ -65,7 +65,7 @@ cd lamp-stack
 ;;
 8)
 cd subversion-stack
-./build-subversion-stack.sh
+./build-subversion-stack.sh $2 $3
 ;;
 *)
 echo 'Wrong selection'
