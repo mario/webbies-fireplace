@@ -70,6 +70,12 @@ echo "password-db = /var/svn/repositories/$PROJECT/conf/passwd" >> /var/svn/repo
 echo "Realm = $PROJECT" >> /var/svn/repositories/$PROJECT/conf/svnserve.conf
 echo 'Done'
 
+# Starting svnserve
+
+echo 'Starting svnserve'
+svnserve -d -r /var/svn/repositories
+echo 'Done'
+
 # Setting up cron
 
 echo 'Setting up cron'
