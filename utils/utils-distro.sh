@@ -5,6 +5,7 @@
 DIST_INFO="/etc/lsb-release"
 
 # Detect distribution 
+
 detect_distro()
 {
   if [ -f $DIST_INFO ]; then
@@ -25,7 +26,15 @@ detect_distro()
   elif [ -f /etc/mandriva-release ] || [ -f /etc/mandrake-release ]; then
     DISTRIB_ID="Mandriva"
   elif [ -f /etc/redhat-release ]; then
-    DISTRIB_ID="RedHat"
+    if grep -q "Red Hat Enterprise Linux" /etc/redhat-release; then
+	    DISTRIB_ID="Red Hat Enterprise Linux"
+	elif grep -q "CentOS" /etc/redhat-release; then
+	    DISTRIB_ID="CentOS"
+	elif grep -q "Scientific Linux" /etc/redhat-release; then
+	    DISTRIB_ID="Scientific Linux"
+	else
+	    DISTRIB_ID="Red Hat Unknown"
+	fi
   elif [ -f /etc/slackware-version ]; then
     DISTRIB_ID="Slackware"
   elif [ -f /etc/release ]; then
