@@ -1,6 +1,7 @@
 #!/bin/bash
 
 echo 'Copyright (C) 2008-2009  Mario Danic <mario.danic@gmail.com>'
+echo 'Moddified by Brendan "Phobos" Almonte <almonteb@datawh.net>'
 echo 'Ramaze stack is copyright (c) 2008-2009 Pistos'
 echo "Welcome to Webby's fireplace"
 echo 'This tiny script is a wrapper around various'
@@ -21,13 +22,15 @@ select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lam
 		read $DEVELOPER
 		cd "$stackname"-stack
 		./build-"$stackname"-stack.sh $PROJECT $DEVELOPER
-   elif [ "$stackname" = "ramaze" -o "$stackname" = "gitosis" \
-         -o "$stackname" = "grails" -o "$stackname" = "mysql"  \
-		 -o "$stackname" = "postgresql" -o "$stackname" = "lamp" -o "$stackname" = "lighttpd" ]; then
-		cd "$stackname"-stack
-		./build-"$stackname"-stack.sh
    else 
+      if [ -f "$stackname-stack/build-$stackname-stack.sh" ]; then
+	    cd "$stackname"-stack
+		echo "$stackname"
+		#./build-"$stackname"-stack.sh
+	  else
 		echo "Bad choice, going out for a walk!"
 		exit 2
+	  fi
    fi
 done
+
