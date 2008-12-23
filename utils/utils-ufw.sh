@@ -80,7 +80,7 @@ ufw_apache_ssl () {
 # Setting up ufw for Apache full - 443
 # Hint: You'll want ssl cert :)
 
-echo "Creating firewall rule for Apache"
+echo "Creating firewall rule for Apache Secure"
 
 if [ $1 = 1 ]
   ufw deny "Apache Secure"
