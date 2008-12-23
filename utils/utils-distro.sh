@@ -38,7 +38,7 @@ detect_distro()
 	DISTRIB_RELEASE="($(sed -e 's/.* \([0-9]\).*/\1/' /etc/redhat-release))"
   elif [ -f /etc/slackware-version ]; then
     DISTRIB_ID="Slackware"
-	DISTRIB_RELEASE="($(cut -d \  -f 2 /etc/slackware-version))"
+	DISTRIB_RELEASE="($(cut -d " " -f 2 /etc/slackware-version | cut -d "." -f -2))"
   elif [ -f /etc/release ]; then
     DISTRIB_ID="Solaris"
   elif [ -f /etc/SuSE-release ]; then
