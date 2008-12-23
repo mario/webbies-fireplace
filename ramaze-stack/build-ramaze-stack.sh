@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 # Check that Portage is on the system.
 
 which emerge 2>/dev/null
-if [[ $? == 1 ]]; then
+if [ $? -eq 1 ]; then
     echo '"emerge" command not found.  Are you not running Gentoo Linux?'
     exit 1
 fi
