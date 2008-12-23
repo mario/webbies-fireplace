@@ -43,16 +43,10 @@ ufw allow http
 echo 'Done'
  
 # Lets install lamp server in silent mode
-echo 'Installing LAMP server'
+echo 'Installing Lighttpd/MySQL/PHP5'
 DEBIAN_FRONTEND=noninteractive apt-get install lighttpd php5-cgi php5-mysql php5-gd php5 mysql-server -y
 echo 'Done'
- 
-# Setting up ufw for apache
- 
-echo 'Creating firewall rule for lighttpd'
-ufw allow "Apache Full"
-echo 'Done'
-  
+
 # Generate mysql password
 echo 'Generating mysql root pass'
 PASS=$(head -c 500 /dev/urandom | tr -dc a-z0-9A-Z | head -c 16)
