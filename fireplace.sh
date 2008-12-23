@@ -63,7 +63,7 @@ cd postgresql-stack
 cd lamp-stack
 ./build-lamp-stack.sh
 ;;
-7)
+8)
 cd subversion-stack
 ./build-subversion-stack.sh
 ;;
