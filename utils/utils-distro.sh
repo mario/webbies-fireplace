@@ -14,7 +14,7 @@ detect_distro()
     DISTRIB_ID="Arch Linux"
   elif [ -f /etc/debian_version ]; then
     DISTRIB_ID="Debian GNU/Linux"
-	DISTRIB_RELEASE="($(cat /etc/debian_version))"
+    DISTRIB_RELEASE="($(cat /etc/debian_version))"
   elif [ -f /etc/fedora-release ]; then
     DISTRIB_ID="Fedora"
   elif [ -f /etc/gentoo-release ]; then
