@@ -1,4 +1,4 @@
-USE="-X alsa apache2 -arts bash-completion -berkdb -fam -gnome -gstreamer -gtk -ipv6 -java -jikes -kde -python -qt -qt3 -qt4 -sqlite -ssl"
+USE="-X alsa apache2 -arts bash-completion -berkdb -fam -gnome -gstreamer -gtk -ipv6 -java -jikes -kde mmx -python -qt -qt3 -qt4 -sqlite sse sse2 -ssl"
 
 MAKEOPTS="-j5"
 

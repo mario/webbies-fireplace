@@ -1,25 +1,38 @@
 #!/bin/bash
 
+# Check that we're running under Gentoo (and not, say Ubuntu)
+
+which emerge 2>/dev/null
+if [[ $? == 1 ]]; then
+    echo '"emerge" command not found.  Are you not running Gentoo Linux?'
+    exit 1
+fi
+
+# Terminate script on any error
+set -e
+
 # Update system config
 
 EMERGE_OPTIONS="-tv"
 #EMERGE_OPTIONS="-atv"
 cat sources/etc/make.conf.appendum >> /etc/make.conf
-cp sources/etc/portage/* /etc/portage
+cp -r sources/etc/portage /etc
 echo 'rm_opts=""' >> /etc/etc-update.conf
 echo 'mv_opts=""' >> /etc/etc-update.conf
 echo 'cp_opts=""' >> /etc/etc-update.conf
 
+echo '-3' | etc-update
+
 # Install major packages
 
-emerge ${EMERGE_OPTIONS} "=app-shells/bash-3.2_p17-r1" portage
-
-echo '-3' | etc-update
+emerge ${EMERGE_OPTIONS} portage
+echo '-7' | etc-update
 
 emerge ${EMERGE_OPTIONS} syslog-ng logrotate
 emerge ${EMERGE_OPTIONS} ruby "=postgresql-8.3.1" nginx screen
 
-emerge --config =postgresql-8.3.1
+EMERGED_POSTGRESQL=`egrep 'completed emerge.*postgres' /var/log/emerge.log | tail -n 1 | awk '{print $8}' | awk -F / '{print $2}'`
+emerge --config "=${EMERGED_POSTGRESQL}"
 rc-update add postgresql default
 
 # Install Rubygems
