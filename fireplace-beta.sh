@@ -27,7 +27,7 @@ select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lam
 		cd "$stackname"-stack
 		./build-"$stackname"-stack
    else 
-		echo 'Bad choice, going out for a walk!"
+		echo "Bad choice, going out for a walk!"
 		exit 2
    fi
 done
