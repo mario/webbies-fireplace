@@ -23,10 +23,9 @@ select stackname in "ramaze" "gitosis" "trac" "grails" "mysql" "postgresql" "lam
 		cd "$stackname"-stack
 		./build-"$stackname"-stack.sh $PROJECT $DEVELOPER
    else 
-      if [ -f "$stackname-stack/build-$stackname-stack.sh" ]; then
+      if [ -f "$stackname"-stack/build-"$stackname"-stack.sh ]; then
 	    cd "$stackname"-stack
-		echo "$stackname"
-		#./build-"$stackname"-stack.sh
+		./build-"$stackname"-stack.sh
 	  else
 		echo "Bad choice, going out for a walk!"
 		exit 2
