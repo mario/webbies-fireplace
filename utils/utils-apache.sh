@@ -41,7 +41,7 @@ apache_module_install () {
 
 echo 'Install/Remove apache modules'
 
-case "${1}" in
+case $1 in
   1)
     modname=libapache2-mod-auth-mysql
     ;;
