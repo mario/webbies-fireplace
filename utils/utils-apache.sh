@@ -43,7 +43,7 @@ apache_module_enable () {
 
 echo 'Enable/Disable apache modules'
 
-case "${1}" in
+case $1 in
   1)
     modname=rewrite
     ;;
