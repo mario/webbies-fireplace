@@ -8,7 +8,7 @@ db_install_mysql () {
 
 # Lets install mysql-server in silent mode
 echo 'Mysql server installation'
-DEBIAN_FRONTEND=noninteractive apt-get install mysql-server -y
+DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server
 echo 'Done'
  
 # Generate mysql password
@@ -27,7 +27,7 @@ db_install_postgresql () {
 
 # Installing postgresql
 echo 'Installing PostgreSQL'
-sudo apt-get install postgresql -y
+sudo apt-get -y install postgresql 
 echo 'Done'
  
 # Generate postgresql password
