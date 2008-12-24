@@ -37,7 +37,6 @@ echo 'Done'
 echo 'Creating firewall rule for OpenSSH'
 ufw allow OpenSSH
 echo 'Done'
-<<<<<<< HEAD:lighttpd-stack/build-lighttpd-stack.sh
 
 # Setting up ufw for lighttpd
 
