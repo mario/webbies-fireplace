@@ -35,52 +35,7 @@ echo 'Done'
 
 }
 
-apache_module_install () {
-# install/remove module
-# Argument $1 is module, Argument $2 is what to do
 
-echo 'Install/Remove apache modules'
-
-case "${1}" in
-  1)
-    modname=php5-mysql
-    ;;
-  2)
-    modname=libapache2-mod-auth-mysql
-    ;;
-  3)
-    modname=libapache2-mod-php5
-    ;;
-  4)
-    modname=libapache2-mod-jk
-    ;;
-  5)
-    modname=libapache2-mod-python
-    ;;
-  6)
-    modname=libapache2-svn
-    ;;
-  *)
-    echo 'Not an option'
-    exit
-    ;;
-esac
-
-if [ $2 = 1 ]
-  # removing module
-  
-  apt-get -y remove $modname
-  
-else
-  # installing module
-  
-  apt-get -y install $modname 
-  
-fi
-
-echo 'Done'
-
-}
 
 apache_module_enable () {
 # enable/disable module
@@ -137,86 +92,6 @@ fi
 
 echo 'Done'
 
-}apache_module_install () {
-# install/remove module
-# Argument $1 is module, Argument $2 is what to do
-
-echo 'Install/Remove apache modules'
-
-case "${1}" in
-  1)
-    modname=php5-mysql
-    ;;
-  2)
-    modname=libapache2-mod-auth-mysql
-    ;;
-  3)
-    modname=libapache2-mod-php5
-    ;;
-  4)
-    modname=libapache2-mod-jk
-    ;;
-  5)
-    modname=libapache2-mod-python
-    ;;
-  6)
-    modname=libapache2-svn
-    ;;
-  *)
-    echo 'Not an option'
-    exit
-    ;;
-esac
-
-if [ $2 = 1 ]
-  # removing module
-  
-  apt-get -y remove $modname
-  
-else
-  # installing module
-  
-  apt-get -y install $modname 
-  
-fi
-
-echo 'Done'
-
-}
-
-apache_module_enable () {
-# enable/disable module
-# Argument $1 is module, Argument $2 is what to do
-
-echo 'Enable/Disable apache modules'
-
-case "${1}" in
-  1)
-    modname=rewrite
-    ;;
-  2)
-    modname=ssl
-    ;;
-  *)
-    echo 'Not an option'
-    exit
-    ;;
-esac
-
-if [ $2 = 1 ]
-  # disable module
-
-  a2dismod $modname
-
-else
-  # enable module
-  
-  a2enmod $modname
-
-fi
-
-echo 'Done'
-
 }
 
 apache_site_enable () {
@@ -245,23 +120,20 @@ echo 'Done'
 
 echo 'Install/Remove apache modules'
 
-case "${1}" in
+case $1 in
   1)
-    modname=php5-mysql
-    ;;
-  2)
     modname=libapache2-mod-auth-mysql
     ;;
-  3)
+  2)
     modname=libapache2-mod-php5
     ;;
-  4)
+  3)
     modname=libapache2-mod-jk
     ;;
-  5)
+  4)
     modname=libapache2-mod-python
     ;;
-  6)
+  5)
     modname=libapache2-svn
     ;;
   *)
@@ -292,7 +164,7 @@ apache_module_enable () {
 
 echo 'Enable/Disable apache modules'
 
-case "${1}" in
+case $1 in
   1)
     modname=rewrite
     ;;
