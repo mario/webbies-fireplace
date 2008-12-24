@@ -13,3 +13,23 @@ PASS=$(head -c 500 /dev/urandom | tr -dc a-z0-9A-Z | head -c $1)
 echo 'Done'
 
 }
+
+misc_apt_update () {
+
+# Update list of available packages
+
+echo 'Fetching updated list of available packages'
+apt-get update
+echo 'Done'
+
+}
+
+misc_install_syslog () {
+
+# Essential packages
+
+echo 'Fetching and installing essential log packages'
+apt-get install syslog-ng logrotate -y
+echo 'Done'
+
+}
