@@ -1,9 +1,8 @@
 ========================
-Webbies fireplace
+Fireplace - Server deployment made a cookie
 ========================
 
-A set of server deployment scripts, initially targeted
-at Webby's, but should work anywhere.
+Simple server deployment framework written in bash.
 
 To get started with deployment, grab the stacks using either git or wget:
 
@@ -44,3 +43,4 @@ Mario Danic <mario.danic@gmail.com>
 Contributors:
 Ramaze stack - Pistos
 LigHTTPD stack - Brendan Almonte <Phobos>
+Various utils - Travis Graham
