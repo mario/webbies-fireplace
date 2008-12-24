@@ -3,7 +3,7 @@
 echo 'Copyright (C) 2008-2009  Mario Danic <mario.danic@gmail.com>'
 echo 'Modified by Brendan "Phobos" Almonte <almonteb@datawh.net>'
 echo 'Ramaze stack is copyright (c) 2008-2009 Pistos'
-echo "Welcome to Webby's fireplace"
+echo "Welcome to the Fireplace"
 
 
 PS3="Your choice: "
