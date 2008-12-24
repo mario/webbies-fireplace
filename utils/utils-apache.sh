@@ -69,12 +69,12 @@ esac
 if [ $2 = 1 ]
   # removing module
   
-  apt-get remove $modname -y
+  apt-get -y remove $modname
   
 else
   # installing module
   
-  apt-get install $modname -y
+  apt-get -y install $modname 
   
 fi
 
