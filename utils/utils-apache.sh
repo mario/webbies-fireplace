@@ -72,49 +72,7 @@ echo 'Done'
 
 }
 
-apache_site_enable () {
-# enable/disable site
-# Argument $1 is site, Argument $2 is what to do
-
-echo 'Enable/Disable site'
-
-if [ $2 = 1 ]
-  # disable site
-
-  a2dissite $1
-
-else
-  # enable site
-  
-  a2ensite $1
-
-fi
-
-echo 'Done'
-
-}
-
-apache_site_enable () {
-# enable/disable site
-# Argument $1 is site, Argument $2 is what to do
-
-echo 'Enable/Disable site'
-
-if [ $2 = 1 ]
-  # disable site
-
-  a2dissite $1
-
-else
-  # enable site
-  
-  a2ensite $1
-
-fi
-
-echo 'Done'
-
-}apache_module_install () {
+apache_module_install () {
 # install/remove module
 # Argument $1 is module, Argument $2 is what to do
 
