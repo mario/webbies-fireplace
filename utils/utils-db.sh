@@ -4,7 +4,7 @@
 # Import misc utils 
 source utils-misc.sh
 
-db_install_mysql () {
+db_mysql_install_configure () {
 
 # Lets install mysql-server in silent mode
 echo 'Mysql server installation'
@@ -23,7 +23,7 @@ echo 'Done'
 
 }
 
-db_install_postgresql () {
+db_postgresql_install_configure () {
 
 # Installing postgresql
 echo 'Installing PostgreSQL'
