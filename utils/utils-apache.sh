@@ -57,6 +57,9 @@ case $1 in
   5)
     modname=libapache2-svn
     ;;
+  6)
+    modname=libapache2-mod-php4
+    ;;
   *)
     echo 'Not an option'
     exit
