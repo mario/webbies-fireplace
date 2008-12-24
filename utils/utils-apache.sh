@@ -49,27 +49,15 @@ case "${1}" in
     modname=libapache2-mod-auth-mysql
     ;;
   3)
-    modname=php5
+    modname=libapache2-mod-php5
     ;;
   4)
-    modname=mysql-server
-    ;;
-  5)
     modname=libapache2-mod-jk
     ;;
-  6)
-    modname=openjdk-6-jdk
-    ;;
-  7)
-    modname=php5-cgi
-    ;;
-  8)
-    modname=php5-gd
-    ;;
-  9)
+  5)
     modname=libapache2-mod-python
     ;;
-  10)
+  6)
     modname=libapache2-svn
     ;;
   *)
@@ -81,12 +69,12 @@ esac
 if [ $2 = 1 ]
   # removing module
   
-  DEBIAN_FRONTEND=noninteractive apt-get remove $modname -y
+  apt-get remove $modname -y
   
 else
   # installing module
   
-  DEBIAN_FRONTEND=noninteractive apt-get install $modname -y
+  apt-get install $modname -y
   
 fi
 
