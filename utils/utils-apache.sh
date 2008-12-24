@@ -49,6 +49,99 @@ case "${1}" in
     modname=libapache2-mod-auth-mysql
     ;;
   3)
+    modname=php5
+    ;;
+  4)
+    modname=mysql-server
+    ;;
+  5)
+    modname=libapache2-mod-jk
+    ;;
+  6)
+    modname=openjdk-6-jdk
+    ;;
+  7)
+    modname=php5-cgi
+    ;;
+  8)
+    modname=php5-gd
+    ;;
+  9)
+    modname=libapache2-mod-python
+    ;;
+  10)
+    modname=libapache2-svn
+    ;;
+  *)
+    echo 'Not an option'
+    exit
+    ;;
+esac
+
+if [ $2 = 1 ]
+  # removing module
+  
+  DEBIAN_FRONTEND=noninteractive apt-get remove $modname -y
+  
+else
+  # installing module
+  
+  DEBIAN_FRONTEND=noninteractive apt-get install $modname -y
+  
+fi
+
+echo 'Done'
+
+}
+
+apache_module_enable () {
+# enable/disable module
+# Argument $1 is module, Argument $2 is what to do
+
+echo 'Enable/Disable apache modules'
+
+case "${1}" in
+  1)
+    modname=rewrite
+    ;;
+  2)
+    modname=ssl
+    ;;
+  *)
+    echo 'Not an option'
+    exit
+    ;;
+esac
+
+if [ $2 = 1 ]
+  # disable module
+
+  a2dismod $modname
+
+else
+  # enable module
+  
+  a2enmod $modname
+
+fi
+
+echo 'Done'
+
+}
+apache_module_install () {
+# install/remove module
+# Argument $1 is module, Argument $2 is what to do
+
+echo 'Install/Remove apache modules'
+
+case "${1}" in
+  1)
+    modname=php5-mysql
+    ;;
+  2)
+    modname=libapache2-mod-auth-mysql
+    ;;
+  3)
     modname=libapache2-mod-php5
     ;;
   4)
