@@ -41,19 +41,13 @@ echo 'Done'
 
 # Setting up ufw for lighttpd
 
-=======
- 
->>>>>>> 046ee6e68ae0d8a44dc4ddee282ee392721138eb:lighttpd-stack/build-lighttpd-stack.sh
 echo 'Creating firewall rule for lighttpd'
 ufw allow http
 echo 'Done'
  
-<<<<<<< HEAD:lighttpd-stack/build-lighttpd-stack.sh
+
 # Lets install llmp server in silent mode
 
-=======
-# Lets install lamp server in silent mode
->>>>>>> 046ee6e68ae0d8a44dc4ddee282ee392721138eb:lighttpd-stack/build-lighttpd-stack.sh
 echo 'Installing Lighttpd/MySQL/PHP5'
 DEBIAN_FRONTEND=noninteractive apt-get install lighttpd php5-cgi php5-mysql php5-gd php5 mysql-server -y
 echo 'Done'
@@ -75,25 +69,17 @@ ln -sf /etc/phpmyadmin/lighttpd.conf /etc/lighttpd/conf-enabled/
 echo 'Done'
 
 # Reloading lighttpd with php support
-<<<<<<< HEAD:lighttpd-stack/build-lighttpd-stack.sh
 
 echo 'Reloading lighttpd with php support'
 lighttpd-enable-mod fastcgi
 /etc/init.d/lighttpd reload
 echo 'Done'
-=======
-lighttpd-enable-mod fastcgi
-/etc/init.d/lighttpd reload
->>>>>>> 046ee6e68ae0d8a44dc4ddee282ee392721138eb:lighttpd-stack/build-lighttpd-stack.sh
+
 
 echo '*****************************************************'
 echo
 echo 'ALL DONE!'
-<<<<<<< HEAD:lighttpd-stack/build-lighttpd-stack.sh
 echo 'Browse to http://your-webbys-ip to see a lighttpd welcome page.'
-=======
-echo 'Browse to http://your-webbys-ip to see a apache welcome page.'
->>>>>>> 046ee6e68ae0d8a44dc4ddee282ee392721138eb:lighttpd-stack/build-lighttpd-stack.sh
 echo 'Browse to http://your-webbys-ip/phpmyadmin to see a phpmyadmin login page.'
 echo 'Your mysql root password is: '"$PASS"
 echo
