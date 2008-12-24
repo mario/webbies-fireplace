@@ -109,7 +109,7 @@ echo 'Enable/Disable PHP'
 if [ $2 = 1 ]
   # disable php
   
-  a2didmod $phpver
+  a2dismod $phpver
   
 else
   # enable php
