@@ -15,10 +15,11 @@ if [ $? -eq 0 ]; then
 fi
 
 # Import utils { misc, apache, db, php } 
-source utils-misc.sh
-source utils-apache.sh
-source utils-db.sh
-source utils-php.sh
+. "../utils/utils-misc.sh"
+. "../utils/utils-ufw.sh"
+. "../utils/utils-apache.sh"
+. "../utils/utils-db.sh"
+. "../utils/utils-php.sh"
 
 # once the LAMP Stack is finished this will be replaced
 misc_apt_update
