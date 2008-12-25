@@ -17,8 +17,8 @@ fi
 # Import utils { misc, apache, db, php } 
 source ../utils/utils-misc.sh
 source ../utils/utils-apache.sh
-source ../utils-db.sh
-source ../utils-php.sh
+source ../utils/utils-db.sh
+source ../utils/utils-php.sh
 
 # once the LAMP Stack is finished this will be replaced
 misc_apt_update
