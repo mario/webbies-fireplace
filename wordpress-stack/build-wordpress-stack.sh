@@ -35,14 +35,30 @@ apache_module_enable 1
 misc_phpmyadmin_configure
 apache_manage 1
 
-# Download Wordpress Latest
+# Download Latest Wordpress
 echo 'Downloading and uncompressing Wordpress'
 mkdir ~/WPinstall
 cd ~/WPinstall
 wget http://wordpress.org/latest.tar.gz
 tar -xzvf latest.tar.gz
-cd wordpress
+cp -r wordpress/* /var/www
 echo 'WP downloaded and uncompressed'
 
+# Creating database and user
+echo 'Creating Database and User'
+echo CREATE DATABASE wordpress; | mysql -u root -p$PASS
+echo GRANT ALL PRIVILEGES ON wordpress.* to \'WP_user\'@\'%\' IDENTIFIED BY \'$PASS\' WITH GRANT OPTION\; | mysql -u root -p$PASS
 
-echo 'Done'
+cd /var/www
+cat wp-config-sample.php | sed -e "s/putyourdbnamehere/wordpress/" | \
+  sed -e "s/usernamehere/WP_user/" | \
+  sed -e "s/yourpasswordhere/$PASS/" > wp-config.php
+  
+# Run WP install steps
+#ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'
+curl whatismyip.org
+
+wget -q $?/wp-admin/install.php?step=1
+wget -q $?/wp-admin/install.php?step=2
+
+echo 'Done Installing Wordpress'
