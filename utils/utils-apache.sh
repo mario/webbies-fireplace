@@ -8,7 +8,7 @@ apache_manage () {
 
 echo 'Managing apache'
 
-if [ $1 = 1 ]
+if [ $1 = 1 ]; then
   /etc/init.d/apache2 restart
 else
   /etc/init.d/apache2 reload
