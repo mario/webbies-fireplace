@@ -1,8 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 # utils-db.sh: Databases.
 
 # Import misc utils 
-source utils-misc.sh
+source ../utils/utils-misc.sh
 
 db_mysql_install_configure () {
 
