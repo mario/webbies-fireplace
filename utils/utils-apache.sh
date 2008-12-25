@@ -56,7 +56,7 @@ case $1 in
     ;;
 esac
 
-if [ $2 = 1 ]
+if [ $2 = 1 ]; then
   # disable module
 
   a2dismod $modname
@@ -103,7 +103,7 @@ case $1 in
     ;;
 esac
 
-if [ $2 = 1 ]
+if [ $2 = 1 ]; then
   # removing module
   
   apt-get -y remove $modname
@@ -160,7 +160,7 @@ apache_site_enable () {
 
 echo 'Enable/Disable site'
 
-if [ $2 = 1 ]
+if [ $2 = 1 ]; then
   # disable site
 
   a2dissite $1
