@@ -66,4 +66,8 @@ curl whatismyip.org
 wget -q $?/wp-admin/install.php?step=1
 wget -q $?/wp-admin/install.php?step=2
 
+# Remove install.php
+
+rm /var/www/blog/wp-admin/install.php
+
 echo 'Done Installing Wordpress'
