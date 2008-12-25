@@ -32,7 +32,7 @@ ufw_openssh () {
 
 echo 'Creating firewall rule for OpenSSH'
 
-if [ $1 = 1 ]
+if [ $1 = 1 ]; then
   ufw deny OpenSSH
 else
   ufw allow OpenSSH
@@ -49,7 +49,7 @@ ufw_apache_full () {
 
 echo "Creating firewall rule for Apache Full"
 
-if [ $1 = 1 ]
+if [ $1 = 1 ]; then
   ufw deny "Apache Full"
 else
   ufw allow "Apache Full"
@@ -65,7 +65,7 @@ ufw_apache () {
 
 echo "Creating firewall rule for Apache"
 
-if [ $1 = 1 ]
+if [ $1 = 1 ]; then
   ufw deny Apache
 else
   ufw allow Apache
@@ -82,7 +82,7 @@ ufw_apache_ssl () {
 
 echo "Creating firewall rule for Apache Secure"
 
-if [ $1 = 1 ]
+if [ $1 = 1 ]; then
   ufw deny "Apache Secure"
 else
   ufw allow "Apache Secure"
@@ -99,7 +99,7 @@ ufw_tcp () {
 
 echo "Creating custom firewall rule"
 
-if [ $2 = 1 ]
+if [ $2 = 1 ]; then
   ufw deny "$1/tcp"
 else
   ufw allow "$1/tcp"
