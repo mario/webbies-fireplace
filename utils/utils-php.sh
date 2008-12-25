@@ -21,7 +21,7 @@ case $1 in
     ;;
 esac
 
-if [ $2 = 1 ]
+if [ $2 = 1 ]; then
   # remove php
   
   apt-get -y remove $phpver 
@@ -71,7 +71,7 @@ esac
 
 echo 'Install/Remove PHP modules'
 
-if [ $3 = 1 ]
+if [ $3 = 1 ]; then
   # remove module
   
   apt-get -y remove $phpmod
@@ -106,7 +106,7 @@ esac
 
 echo 'Enable/Disable PHP'
 
-if [ $2 = 1 ]
+if [ $2 = 1 ]; then
   # disable php
   
   a2dismod $phpver
