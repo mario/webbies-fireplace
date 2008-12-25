@@ -33,9 +33,9 @@ ufw_openssh () {
 echo 'Creating firewall rule for OpenSSH'
 
 if [ "$1" = 1 ]; then
-  echo "y" | ufw deny OpenSSH
+  ufw deny OpenSSH
 else
-  echo "y" | ufw allow OpenSSH
+  ufw allow OpenSSH
 fi
 
 echo 'Done'
