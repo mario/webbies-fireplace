@@ -28,10 +28,11 @@ echo 'Done'
 
 ufw_openssh () {
 
-# Setting up ufw for openSSH
+# Setting up ufw for OpenSSH
 
 echo 'Creating firewall rule for OpenSSH'
 
+# TODO: Pipe "y" to deny and allow of OpenSSH
 if [ "$1" = 1 ]; then
   ufw deny OpenSSH
 else
