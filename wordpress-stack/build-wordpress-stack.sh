@@ -47,7 +47,7 @@ echo 'WP downloaded and uncompressed'
 
 # Creating database and user
 echo 'Creating Database and User'
-echo CREATE DATABASE wordpress; | mysql -u root -p$PASS
+echo CREATE DATABASE wordpress\; | mysql -u root -p$PASS
 echo GRANT ALL PRIVILEGES ON wordpress.* to \'WP_user\'@\'%\' IDENTIFIED BY \'$PASS\' WITH GRANT OPTION\; | mysql -u root -p$PASS
 
 cd /var/www
@@ -63,3 +63,7 @@ wget -q $?/wp-admin/install.php?step=1
 wget -q $?/wp-admin/install.php?step=2
 
 echo 'Done Installing Wordpress'
+echo 'Your MySQL root password is '"$PASS"
+echo 'Your Wordpress database is "wordpress"'
+echo 'Your Wordpress database user is "WP_user"'
+echo 'Your Wordpress database password is '"$PASS"
