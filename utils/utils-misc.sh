@@ -33,3 +33,19 @@ apt-get install syslog-ng logrotate -y
 echo 'Done'
 
 }
+
+misc_phpmyadmin_configure () {
+
+# Installing phpmysqladmin
+
+echo 'Getting up and ready with phpmysqladmin'
+DEBIAN_FRONTEND=noninteractive apt-get install phpmyadmin -y
+echo 'Done'
+
+# Setting up phpmysqladmin
+
+echo 'Setting up phpmysqladmin'
+echo "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
+echo 'Done'
+
+}
