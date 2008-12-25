@@ -16,6 +16,16 @@ if [ $? -eq 0 ]; then
   exit
 fi
 
+if [ $# -eq 0 ]; then
+  # exit if the user doesn't give an email
+  echo 'Required email address as an argument, exiting.'
+  exit
+else
+  USEREMAIL=$1
+  # regex validation for email (inprogress)
+  # \b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b
+fi
+
 # Import utils { misc, apache, db, php, ufw } 
 source ../utils/utils-misc.sh
 source ../utils/utils-apache.sh
@@ -53,11 +63,12 @@ echo 'Creating Database and User'
 mysql -e "CREATE DATABASE wordpress;" -u root -p $PASS
 mysql -e "GRANT ALL PRIVILEGES ON wordpress.* to \'WP_user\'@\'%\' IDENTIFIED BY \'$PASS\' WITH GRANT OPTION\;" -u root -p $PASS
 
-cd /var/www
+cd /var/www/blog
 # TODO: Fix this, because it doesn't create wp-config.php
-cat wp-config-sample.php | sed -e "s/putyourdbnamehere/wordpress/" | \
-  sed -e "s/usernamehere/WP_user/" | \
-  sed -e "s/yourpasswordhere/$PASS/" > wp-config.php
+cat wp-config-sample.php | \
+sed -e 's/putyourdbnamehere/wordpress/' \
+ -e 's/usernamehere/WP_user/' \
+ -e 's/yourpasswordhere/'$PASS'/' > wp-config.php
   
 # Run WP install steps
 #ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'
