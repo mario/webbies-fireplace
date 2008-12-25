@@ -1,11 +1,8 @@
 #!/bin/bash
 # utils-db.sh: Databases.
 
-# Set current path to utils
-scriptPath=${0%/*}
-
 # Import misc utils 
-source $scriptPath/utils-misc.sh
+source utils-misc.sh
 
 db_mysql_install_configure () {
 
