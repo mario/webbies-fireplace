@@ -4,7 +4,7 @@
 misc_genpass () {
 # only argument is number of chars password should have
 # please use 16 for DB stuff and 5 for more regular things
-if [ $1 = ""]; then 
+if [ "$1" = ""]; then 
   $1 = 16
 fi
     

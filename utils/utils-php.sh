@@ -8,7 +8,7 @@ php_install () {
 
 echo 'Installing PHP'
 
-case $1 in
+case "$1" in
   1)
     phpver=php4
     ;;
@@ -21,7 +21,7 @@ case $1 in
     ;;
 esac
 
-if [ $2 = 1 ]; then
+if [ "$2" = 1 ]; then
   # remove php
   
   apt-get -y remove $phpver 
@@ -40,7 +40,7 @@ php_module_install () {
 # install/remove modules
 # Argument $1 is version, Argument $2 is module, Argument $3 is what to do
 
-case $1 in
+case "$1" in
   1)
     phpver=php4
     ;;
@@ -53,7 +53,7 @@ case $1 in
     ;;
 esac
 
-case $2 in
+case "$2" in
   1)
     phpmod=$phpver-mysql
     ;;
@@ -71,7 +71,7 @@ esac
 
 echo 'Install/Remove PHP modules'
 
-if [ $3 = 1 ]; then
+if [ "$3" = 1 ]; then
   # remove module
   
   apt-get -y remove $phpmod
@@ -91,7 +91,7 @@ php_enable () {
 # enable/diable php
 # Argument $1 is version, Argument $2 is what to do
 
-case $1 in
+case "$1" in
   1)
     phpver=php4
     ;;
@@ -106,7 +106,7 @@ esac
 
 echo 'Enable/Disable PHP'
 
-if [ $2 = 1 ]; then
+if [ "$2" = 1 ]; then
   # disable php
   
   a2dismod $phpver

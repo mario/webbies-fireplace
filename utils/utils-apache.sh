@@ -8,7 +8,7 @@ apache_manage () {
 
 echo 'Managing apache'
 
-if [ $1 = 1 ]; then
+if [ "$1" = 1 ]; then
   /etc/init.d/apache2 restart
 else
   /etc/init.d/apache2 reload
@@ -56,7 +56,7 @@ case $1 in
     ;;
 esac
 
-if [ $2 = 1 ]; then
+if [ "$2" = 1 ]; then
   # disable module
 
   a2dismod $modname
@@ -78,7 +78,7 @@ apache_module_install () {
 
 echo 'Install/Remove apache modules'
 
-case $1 in
+case "$1" in
   1)
     modname=libapache2-mod-auth-mysql
     ;;
@@ -103,7 +103,7 @@ case $1 in
     ;;
 esac
 
-if [ $2 = 1 ]; then
+if [ "$2" = 1 ]; then
   # removing module
   
   apt-get -y remove $modname
@@ -125,7 +125,7 @@ apache_module_enable () {
 
 echo 'Enable/Disable apache modules'
 
-case $1 in
+case "$1" in
   1)
     modname=rewrite
     ;;
@@ -138,7 +138,7 @@ case $1 in
     ;;
 esac
 
-if [ $2 = 1 ]; then
+if [ "$2" = 1 ]; then
   # disable module
   a2dismod $modname
 else
@@ -156,7 +156,7 @@ apache_site_enable () {
 
 echo 'Enable/Disable site'
 
-if [ $2 = 1 ]; then
+if [ "$2" = 1 ]; then
   # disable site
 
   a2dissite $1
