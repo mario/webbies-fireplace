@@ -65,7 +65,7 @@ ufw_apache () {
 
 echo "Creating firewall rule for Apache"
 
-if [ $1 = 1 ]; then
+if [ $1 = "1" ]; then
   ufw deny Apache
 else
   ufw allow Apache
