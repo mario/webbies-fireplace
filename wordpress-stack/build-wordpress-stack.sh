@@ -14,7 +14,7 @@ if [ $? -eq 0 ]; then
   exit
 fi
 
-# Import utils { misc, apache, db, php } 
+# Import utils { misc, apache, db, php, ufw } 
 source ../utils/utils-misc.sh
 source ../utils/utils-apache.sh
 source ../utils/utils-db.sh
