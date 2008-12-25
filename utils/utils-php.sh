@@ -21,7 +21,7 @@ case $1 in
     ;;
 esac
 
-if [ $2 = 1 ]
+if [ $2 = 1 ]; then
   # remove php
   
   apt-get -y remove $phpver 
