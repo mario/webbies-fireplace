@@ -140,14 +140,10 @@ esac
 
 if [ $2 = 1 ]; then
   # disable module
-
   a2dismod $modname
-
 else
   # enable module
-  
   a2enmod $modname
-
 fi
 
 echo 'Done'
