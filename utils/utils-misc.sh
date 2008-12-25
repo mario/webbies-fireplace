@@ -9,7 +9,7 @@ if [ $1 = ""]; then
 fi
     
 echo 'Generating a password'
-PASS=$(head -c 500 /dev/urandom | tr -dc a-z0-9A-Z | head -c $1)
+PASS=$(head -c 500 /dev/urandom | tr -dc a-z0-9A-Z | head -c 16)
 echo 'Done'
 
 }
