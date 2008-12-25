@@ -42,7 +42,8 @@ mkdir ~/WPinstall
 cd ~/WPinstall
 wget http://wordpress.org/latest.tar.gz
 tar -xzvf latest.tar.gz
-cp -r wordpress/* /var/www
+mkdir /var/www/blog
+cp -r wordpress/* /var/www/blog
 echo 'WP downloaded and uncompressed'
 
 # Creating database and user
