@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # build-wordpress-stack: Wordpress installer.
 
 # Assumptions: This script assumes that you have a fresh linux install on your VPS.
@@ -15,10 +15,10 @@ if [ $? -eq 0 ]; then
 fi
 
 # Import utils { misc, apache, db, php } 
-source utils-misc.sh
-source utils-apache.sh
-source utils-db.sh
-source utils-php.sh
+source ../utils/utils-misc.sh
+source ../utils/utils-apache.sh
+source ../utils-db.sh
+source ../utils-php.sh
 
 # once the LAMP Stack is finished this will be replaced
 misc_apt_update
