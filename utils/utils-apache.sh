@@ -138,7 +138,7 @@ case $1 in
     ;;
 esac
 
-if [ $2 = 1 ]
+if [ $2 = 1 ]; then
   # disable module
 
   a2dismod $modname
