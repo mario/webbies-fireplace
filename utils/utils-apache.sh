@@ -8,7 +8,7 @@ apache_manage () {
 
 echo 'Managing apache'
 
-if [ $1 = 1 ]
+if [ $1 = 1 ]; then
   /etc/init.d/apache2 restart
 else
   /etc/init.d/apache2 reload
@@ -66,7 +66,7 @@ case $1 in
     ;;
 esac
 
-if [ $2 = 1 ]
+if [ $2 = 1 ]; then
   # removing module
   
   apt-get -y remove $modname
@@ -101,7 +101,7 @@ case $1 in
     ;;
 esac
 
-if [ $2 = 1 ]
+if [ $2 = 1 ]; then
   # disable module
 
   a2dismod $modname
@@ -123,7 +123,7 @@ apache_site_enable () {
 
 echo 'Enable/Disable site'
 
-if [ $2 = 1 ]
+if [ $2 = 1 ]; then
   # disable site
 
   a2dissite $1
