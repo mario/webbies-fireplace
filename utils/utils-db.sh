@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # utils-db.sh: Databases.
 
 # Import misc utils 
