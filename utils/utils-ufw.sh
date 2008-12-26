@@ -17,12 +17,15 @@ ufw logging ON
 ufw app default ALLOW
 echo 'Done'
 
+}
+
+urf_enable() {
+
 # Enabling ufw
 
 echo 'Enabling ufw'
 ufw enable
 echo 'Done'
-
 
 }
 
