@@ -65,7 +65,7 @@ echo 'WP downloaded and uncompressed'
 # Creating database and user
 echo 'Creating Database and User'
 mysql -e "CREATE DATABASE wordpress;" -u root -p$PASS
-mysql -e "GRANT ALL PRIVILEGES ON wordpress.* to 'WP_user'@'%' IDENTIFIED BY '$PASS' WITH GRANT OPTION;" -u root -p$PASS
+mysql -e "GRANT ALL PRIVILEGES ON wordpress.* to 'WP_user'@'localhost' IDENTIFIED BY '$PASS' WITH GRANT OPTION;" -u root -p$PASS
 
 # cleaning up files
 cd /var/www/blog
@@ -81,8 +81,8 @@ sed -e 's/putyourdbnamehere/wordpress/' \
 #ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'
 # curl whatismyip.org
 
- wget "localhost/wp-admin/install.php?step=1"
- wget "localhost/wp-admin/install.php?step=2"
+ wget "localhost/blog/wp-admin/install.php?step=1"
+ wget "localhost/blog/wp-admin/install.php?step=2"
 
 # Remove install.php
 # rm /var/www/blog/wp-admin/install.php
