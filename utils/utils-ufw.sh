@@ -24,7 +24,7 @@ ufw_enable() {
 # Enabling ufw
 
 echo 'Enabling ufw'
-ufw enable
+echo y | ufw enable
 echo 'Done'
 
 }
