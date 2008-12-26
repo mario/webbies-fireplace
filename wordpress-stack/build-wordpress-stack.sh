@@ -54,9 +54,9 @@ echo 'Downloading and uncompressing Wordpress'
 mkdir ~/WPinstall
 cd ~/WPinstall
 wget http://wordpress.org/latest.tar.gz
-tar -xzvf latest.tar.gz
+tar -xzvf latest.tar.gz 2>&1 | tee /dev/null
 mkdir /var/www/blog
-cp -r wordpress/* /var/www/blog | tee > /dev/null
+cp -r wordpress/* /var/www/blog
 echo 'WP downloaded and uncompressed'
 
 # Creating database and user
