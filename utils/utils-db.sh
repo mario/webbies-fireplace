@@ -15,7 +15,13 @@ echo 'Done'
 echo 'Generating mysql root pass'
 misc_genpass
 echo 'Done'
- 
+
+# testing to see if mysqld is really running before we try to move further.
+
+kill -9 `ps ax | grep mysqld | tr -s ' ' |cut -d' ' -f1`
+rm /etc/my.cnf
+/etc/init.d/mysqld restart
+
 # Setting up root pass for mysql
 echo 'Setting up root mysql pass'
 mysqladmin -u root password $PASS
