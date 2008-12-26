@@ -1,5 +1,5 @@
 #!/bin/bash
-# build-wordpress-stack: Wordpress installer.
+# build-wordpress-stack.sh: Wordpress installer.
 
 # Assumptions: This script assumes that you have a fresh linux install on your VPS.
 #               If Apache, MySQL, or PHP have not been installed they will be.
