@@ -85,7 +85,7 @@ sed -e 's/putyourdbnamehere/wordpress/' \
  wget -q localhost/wp-admin/install.php?step=2
 
 # Remove install.php
-rm /var/www/blog/wp-admin/install.php
+# rm /var/www/blog/wp-admin/install.php
 
 echo 'Done Installing Wordpress'
 echo 'Your MySQL root password is '"$PASS"
