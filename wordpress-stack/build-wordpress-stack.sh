@@ -38,6 +38,7 @@ misc_apt_update
 misc_install_syslog
 ufw_install_configure
 ufw_openssh
+ufw_enable
 apache_install_configure
 ufw_apache_full
 apache_module_install 1
