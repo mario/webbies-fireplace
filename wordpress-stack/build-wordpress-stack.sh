@@ -64,8 +64,11 @@ echo 'Creating Database and User'
 mysql -e "CREATE DATABASE wordpress;" -u root -p$PASS
 mysql -e "GRANT ALL PRIVILEGES ON wordpress.* to 'WP_user'@'%' IDENTIFIED BY '$PASS' WITH GRANT OPTION;" -u root -p$PASS
 
+# cleaning up files
 cd /var/www/blog
+rm -rf ~/WPinstall
 
+# creating wp-config.php
 cat wp-config-sample.php | \
 sed -e 's/putyourdbnamehere/wordpress/' \
  -e 's/usernamehere/WP_user/' \
