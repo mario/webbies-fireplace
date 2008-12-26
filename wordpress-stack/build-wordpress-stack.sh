@@ -23,7 +23,10 @@ if [ $# -eq 0 ]; then
 else
   USEREMAIL=$1
   # regex validation for email (inprogress)
-  # \b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b
+  REGEX="\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b"
+  if [ $USEREMAIL =~ $REGEX ]; then
+    # stuff
+  fi
 fi
 
 # Import utils { misc, apache, db, php, ufw } 
@@ -54,7 +57,7 @@ echo 'Downloading and uncompressing Wordpress'
 mkdir ~/WPinstall
 cd ~/WPinstall
 wget http://wordpress.org/latest.tar.gz
-tar -xzvf latest.tar.gz 2> /dev/null
+tar -xzf latest.tar.gz
 mkdir /var/www/blog
 cp -r wordpress/* /var/www/blog
 echo 'WP downloaded and uncompressed'
@@ -76,10 +79,10 @@ sed -e 's/putyourdbnamehere/wordpress/' \
   
 # Run WP install steps
 #ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'
-curl whatismyip.org
+# curl whatismyip.org
 
-wget -q "$?"/wp-admin/install.php?step=1
-wget -q "$?"/wp-admin/install.php?step=2
+ wget -q localhost/wp-admin/install.php?step=1
+ wget -q localhost/wp-admin/install.php?step=2
 
 # Remove install.php
 
