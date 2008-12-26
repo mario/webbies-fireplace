@@ -81,8 +81,8 @@ sed -e 's/putyourdbnamehere/wordpress/' \
 #ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'
 # curl whatismyip.org
 
- wget -q localhost/wp-admin/install.php?step=1
- wget -q localhost/wp-admin/install.php?step=2
+ wget "localhost/wp-admin/install.php?step=1"
+ wget "localhost/wp-admin/install.php?step=2"
 
 # Remove install.php
 # rm /var/www/blog/wp-admin/install.php
