@@ -16,8 +16,7 @@ echo 'Generating mysql root pass'
 misc_genpass
 echo 'Done'
 
-# creating socket link and check if it's usable
-ln -s /var/run/mysqld/mysqld.sock /tmp/mysqld.sock
+# sleep before connecting to mysqld.sock
 sleep 2
 
 # Setting up root pass for mysql
