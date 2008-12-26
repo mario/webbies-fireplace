@@ -19,7 +19,7 @@ echo 'Done'
 
 }
 
-urf_enable() {
+ufw_enable() {
 
 # Enabling ufw
 
