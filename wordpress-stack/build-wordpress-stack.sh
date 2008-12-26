@@ -20,13 +20,13 @@ if [ $# -eq 0 ]; then
   # exit if the user doesn't give an email
   echo 'Required email address as an argument, exiting.'
   exit
-else
-  USEREMAIL=$1
-  # regex validation for email (inprogress)
-  REGEX="\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b"
-  if [ $USEREMAIL =~ $REGEX ]; then
-    # stuff
-  fi
+fi
+
+# regex validation for email (inprogress)
+USEREMAIL=$1
+REGEX="\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b"
+if [ $USEREMAIL =~ $REGEX ]; then
+  # stuff
 fi
 
 # Import utils { misc, apache, db, php, ufw } 
@@ -85,7 +85,6 @@ sed -e 's/putyourdbnamehere/wordpress/' \
  wget -q localhost/wp-admin/install.php?step=2
 
 # Remove install.php
-
 rm /var/www/blog/wp-admin/install.php
 
 echo 'Done Installing Wordpress'
