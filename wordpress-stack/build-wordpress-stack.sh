@@ -62,12 +62,10 @@ echo 'WP downloaded and uncompressed'
 # Creating database and user
 echo 'Creating Database and User'
 mysql -e "CREATE DATABASE wordpress;" -u root -p$PASS
-echo 'DB created'
 mysql -e "GRANT ALL PRIVILEGES ON wordpress.* to 'WP_user'@'%' IDENTIFIED BY '$PASS' WITH GRANT OPTION;" -u root -p$PASS
-echo 'User created'
 
 cd /var/www/blog
-# TODO: Fix this, because it doesn't create wp-config.php
+
 cat wp-config-sample.php | \
 sed -e 's/putyourdbnamehere/wordpress/' \
  -e 's/usernamehere/WP_user/' \
