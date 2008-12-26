@@ -44,7 +44,6 @@ apache_module_install 1
 php_install 2
 php_module_install 2 1
 db_mysql_install_configure
-echo $PASS
 apache_module_enable 1
 misc_phpmyadmin_configure
 apache_manage 1
@@ -61,10 +60,9 @@ echo 'WP downloaded and uncompressed'
 
 # Creating database and user
 echo 'Creating Database and User'
-echo $PASS
 mysql -e "CREATE DATABASE wordpress;" -u root -p$PASS
 echo 'DB created'
-mysql -e "GRANT ALL PRIVILEGES ON wordpress.* to \'WP_user\'@\'%\' IDENTIFIED BY \'$PASS\' WITH GRANT OPTION\;" -u root -p$PASS
+mysql -e "GRANT ALL PRIVILEGES ON wordpress.* to 'WP_user'@'%' IDENTIFIED BY '$PASS' WITH GRANT OPTION;" -u root -p$PASS
 echo 'User created'
 
 cd /var/www/blog
