@@ -90,7 +90,8 @@ mv install.tmp install.php
 # chmod +x install.php
 # php install.php
 apt-get install lynx
-lynx localhost/blog/wp-admin/install.php
+curl whatismyip.org
+lynx "$?"/blog/wp-admin/install.php
 
 # Remove install.php
 mv /var/www/blog/wp-admin/install.php /var/www/blog/wp-admin/install.php.bak2
