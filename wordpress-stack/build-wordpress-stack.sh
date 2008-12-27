@@ -24,10 +24,12 @@ fi
 
 # regex validation for email (inprogress)
  USEREMAIL=$1
-# REGEX="\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b"
-# if [ $USEREMAIL =~ $REGEX ]; then
-  # stuff
-# fi
+ REGEX="\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b"
+ if [[ "$USEREMAIL" =~ "$REGEX" ]]; then
+ else
+   echo 'Not a valid email, pleace check it.'
+   exit
+ fi
 
 # Import utils { misc, apache, db, php, ufw } 
 source ../utils/utils-misc.sh
@@ -81,7 +83,7 @@ sed -e 's/putyourdbnamehere/wordpress/' \
 # editing install.php to make it happen
 cd /var/www/blog/wp-admin
 mv install.php install.php.bak
-cp ~/webbies-fireplace/wordpress-stack/source/install.php /var/www/blog/wp-admin
+cp ~/webbies-fireplace/wordpress-stack/sources/install.php /var/www/blog/wp-admin
 cat install.php | \
 sed 's/USEREMAIL/'$USEREMAIL'/' > install.tmp
 mv install.tmp install.php
@@ -94,8 +96,18 @@ lynx -dump $url
 # Remove install.php
 mv /var/www/blog/wp-admin/install.php /var/www/blog/wp-admin/install.php.bak2
 
-echo 'Done Installing Wordpress'
-echo 'Your MySQL root password is '"$PASS"
-echo 'Your Wordpress database is "wordpress"'
-echo 'Your Wordpress database user is "WP_user"'
-echo 'Your Wordpress database password is '"$PASS"
+# Remove Fireplace files
+rm -rf ~/webbies-fireplace
+
+echo '*****************************************************************'
+echo
+echo 'Done!'
+echo 'Your MySQL root password is: '"$PASS"
+echo 'Your Wordpress database is: "wordpress"'
+echo 'Your Wordpress database user is: "WP_user"'
+echo 'Your Wordpress database password is: '"$PASS"
+echo 'Visit http://your-ip to see your Apache Welcome'
+echo 'Visit http://your-ip/blog to see your Wordpress install'
+echo 'Visit http://your-ip/phpmyadmin to see your PHPMyAdmin install'
+echo
+echo '*****************************************************************'
