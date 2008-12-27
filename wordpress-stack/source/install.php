@@ -20,7 +20,7 @@ require_once('../wp-load.php');
 /** Load WordPress Administration Upgrade API */
 require_once('./includes/upgrade.php');
 
-$step = '2'
+$step = 2;
 
 /**
  * Display install header.
