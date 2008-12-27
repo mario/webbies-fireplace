@@ -80,9 +80,13 @@ sed -e 's/putyourdbnamehere/wordpress/' \
 # Run WP install steps
 #ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'
 # curl whatismyip.org
+# editing install.php to make it happen
+cat install.php | \
+sed 's/$result = wp_install($weblog_title, 'admin', $admin_email, $public);/$result = wp_install("Blog", "admin", '$USEREMAIL', "1");/' > install.php
 
- wget "127.0.0.1/blog/wp-admin/install.php?step=1"
+# wget "127.0.0.1/blog/wp-admin/install.php?step=1"
  wget "127.0.0.1/blog/wp-admin/install.php?step=2"
+
 
 # Remove install.php
 # rm /var/www/blog/wp-admin/install.php
