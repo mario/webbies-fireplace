@@ -47,7 +47,7 @@ ufw_apache_full
 apache_module_install 1
 php_install 2
 php_module_install 2 1
-php_module_install 2 4
+# php_module_install 2 4
 db_mysql_install_configure
 apache_module_enable 1
 misc_phpmyadmin_configure
@@ -79,8 +79,6 @@ sed -e 's/putyourdbnamehere/wordpress/' \
  -e 's/yourpasswordhere/'$PASS'/' > wp-config.php
   
 # Run WP install steps
-#ifconfig  | grep 'inet addr:'| grep -v '127.0.0.1' | cut -d: -f2 | awk '{ print $1}'
-# curl whatismyip.org
 # editing install.php to make it happen
 cd /var/www/blog/wp-admin
 mv install.php install.php.bak
@@ -89,10 +87,10 @@ cat install.php | \
 sed 's/USEREMAIL/'$USEREMAIL'/' > install.tmp
 mv install.tmp install.php
 
-# wget "127.0.0.1/blog/wp-admin/install.php?step=1"
-chmod +x install.php
-php install.php
-
+# chmod +x install.php
+# php install.php
+apt-get install lynx
+lynx localhost/blog/wp-admin/install.php
 
 # Remove install.php
 mv /var/www/blog/wp-admin/install.php /var/www/blog/wp-admin/install.php.bak2
