@@ -89,7 +89,9 @@ mv install.tmp install.php
 
 apt-get install lynx
 curl whatismyip.org
-lynx -dump $?/blog/wp-admin/install.php > /dev/null 2>&1
+url=$?/blog/wp-admin/install.php
+echo $url
+lynx -dump $url > /dev/null 2>&1
 
 # Remove install.php
 mv /var/www/blog/wp-admin/install.php /var/www/blog/wp-admin/install.php.bak2
