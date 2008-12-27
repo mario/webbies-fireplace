@@ -63,6 +63,9 @@ case "$2" in
   3)
     phpmod=$phpver-gd
     ;;
+  4)
+    phpmod=$phpver-cli
+    ;;
   *)
     echo 'Not a module'
     exit
