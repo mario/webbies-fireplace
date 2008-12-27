@@ -47,7 +47,6 @@ ufw_apache_full
 apache_module_install 1
 php_install 2
 php_module_install 2 1
-# php_module_install 2 4
 db_mysql_install_configure
 apache_module_enable 1
 misc_phpmyadmin_configure
@@ -90,7 +89,6 @@ mv install.tmp install.php
 apt-get install lynx
 j=$(curl 'whatismyip.org')
 url="http://$j/blog/wp-admin/install.php"
-echo $url
 lynx -dump $url
 
 # Remove install.php
