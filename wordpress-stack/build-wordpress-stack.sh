@@ -89,7 +89,7 @@ mv install.tmp install.php
 
 apt-get install lynx
 curl whatismyip.org
-url=$?/blog/wp-admin/install.php
+url="http://$?/blog/wp-admin/install.php"
 echo $url
 lynx -dump $url
 
