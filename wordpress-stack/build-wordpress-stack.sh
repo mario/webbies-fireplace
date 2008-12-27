@@ -47,6 +47,7 @@ ufw_apache_full
 apache_module_install 1
 php_install 2
 php_module_install 2 1
+php_module_install 2 4
 db_mysql_install_configure
 apache_module_enable 1
 misc_phpmyadmin_configure
@@ -89,7 +90,6 @@ sed 's/USEREMAIL/'$USEREMAIL'/' > install.tmp
 mv install.tmp install.php
 
 # wget "127.0.0.1/blog/wp-admin/install.php?step=1"
-apt-get install php5-cli
 chmod +x install.php
 php install.php
 
