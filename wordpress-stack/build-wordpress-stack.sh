@@ -87,11 +87,9 @@ cat install.php | \
 sed 's/USEREMAIL/'$USEREMAIL'/' > install.tmp
 mv install.tmp install.php
 
-# chmod +x install.php
-# php install.php
 apt-get install lynx
 curl whatismyip.org
-lynx "$?"/blog/wp-admin/install.php
+lynx -dump $?/blog/wp-admin/install.php > /dev/null 2>&1
 
 # Remove install.php
 mv /var/www/blog/wp-admin/install.php /var/www/blog/wp-admin/install.php.bak2
