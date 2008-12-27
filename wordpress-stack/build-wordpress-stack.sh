@@ -87,11 +87,12 @@ cat install.php | \
 sed 's/_POST/_GET/g' > install.php
 
 # wget "127.0.0.1/blog/wp-admin/install.php?step=1"
- wget "127.0.0.1/blog/wp-admin/install.php?step=2&weblog_title=Blog&admin_email="$USEREMAIL
+apt-get lynx
+lynx "127.0.0.1/blog/wp-admin/install.php?step=2&weblog_title=Blog&admin_email="$USEREMAIL
 
 
 # Remove install.php
-# rm /var/www/blog/wp-admin/install.php
+ rm /var/www/blog/wp-admin/install.php
 
 echo 'Done Installing Wordpress'
 echo 'Your MySQL root password is '"$PASS"
