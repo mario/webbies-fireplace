@@ -29,6 +29,7 @@ display_header();
 $wpdb->show_errors();
 $result = wp_install('Blog', 'admin', 'USEREMAIL', '1');
 extract($result, EXTR_SKIP);
+# Until SMTP is opened and an email is sent we need to echo this out
 echo "Wordpress username 'admin'";
 echo "Wordpress admin password '"$password"'";
 ?>
