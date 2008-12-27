@@ -29,8 +29,8 @@ display_header();
 $wpdb->show_errors();
 $result = wp_install('Blog', 'admin', 'USEREMAIL', '1');
 extract($result, EXTR_SKIP);
-
-echo $password
+echo "Wordpress username 'admin'";
+echo "Wordpress admin password '"$password"'";
 ?>
 
 </body>
