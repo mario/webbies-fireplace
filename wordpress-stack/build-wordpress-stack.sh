@@ -82,13 +82,16 @@ sed -e 's/putyourdbnamehere/wordpress/' \
 # curl whatismyip.org
 # editing install.php to make it happen
 cd /var/www/blog/wp-admin
-cp install.php install.php.bak
+mv install.php install.php.bak
+cp ~/webbies-fireplace/wordpress-stack/source/install.php /var/www/blog/wp-admin
 cat install.php | \
-sed 's/_POST/_GET/g' > install.php
+sed 's/USEREMAIL/'$USEREMAIL'/' > install.tmp
+mv install.tmp install.php
 
 # wget "127.0.0.1/blog/wp-admin/install.php?step=1"
-apt-get install lynx
-lynx "127.0.0.1/blog/wp-admin/install.php?step=2&weblog_title=Blog&admin_email=$USEREMAIL"
+apt-get install php5-cli
+chmod +x install.php
+php install.php
 
 
 # Remove install.php
