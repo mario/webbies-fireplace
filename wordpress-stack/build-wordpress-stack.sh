@@ -88,8 +88,8 @@ sed 's/USEREMAIL/'$USEREMAIL'/' > install.tmp
 mv install.tmp install.php
 
 apt-get install lynx
-curl whatismyip.org
-url="http://$?/blog/wp-admin/install.php"
+j=$(curl 'whatismyip.org')
+url="http://$j/blog/wp-admin/install.php"
 echo $url
 lynx -dump $url
 
