@@ -97,6 +97,9 @@ lynx -dump $url
 # Remove install.php
 mv /var/www/blog/wp-admin/install.php /var/www/blog/wp-admin/install.php.bak2
 
+# Remave Lynx since we're done
+apt-get remove lynx
+
 # Remove Fireplace files
 rm -rf ~/webbies-fireplace
 
