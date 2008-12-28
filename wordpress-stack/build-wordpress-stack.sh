@@ -6,7 +6,7 @@
 #               Because this script creates a db and user MySQL cannot be preinstalled.
 #               If MySQL is installed this script will exit.
 
-# TODO: add user email as argument, we need it for installations
+# TODO: add blog title as argument
 
 which mysql
 
