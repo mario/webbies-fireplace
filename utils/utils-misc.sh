@@ -56,6 +56,10 @@ misc_install_lynx () {
 
 # Installing lynx
 
-apt-get install lynx
+if [ "$1" = 1 ]; then
+  apt-get remove lynx
+else
+  apt-get install lynx
+fi
 
 }
