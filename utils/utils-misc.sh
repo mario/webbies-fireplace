@@ -51,3 +51,11 @@ echo "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
 echo 'Done'
 
 }
+
+misc_install_lynx () {
+
+# Installing lynx
+
+apt-get install lynx
+
+}
