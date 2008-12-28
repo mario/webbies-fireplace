@@ -38,10 +38,6 @@ echo 'Creating firewall rule for OpenSSH'
 ufw allow OpenSSH
 echo 'Done'
 
-echo 'Creating firewall rule for apache2'
-ufw allow "Apache Full"
-echo 'Done'
-
 # Lets install lamp server in silent mode
 echo 'Installing LAMP server'
 DEBIAN_FRONTEND=noninteractive apt-get install apache2 php5-mysql libapache2-mod-auth-mysql php5 mysql-server -y
