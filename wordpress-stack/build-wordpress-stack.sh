@@ -89,7 +89,7 @@ cat install.php | \
 sed 's/USEREMAIL/'$USEREMAIL'/' > install.tmp
 mv install.tmp install.php
 
-apt-get install lynx
+misc_install_lynx
 j=$(curl 'whatismyip.org')
 url="http://$j/blog/wp-admin/install.php"
 lynx -dump $url
@@ -98,7 +98,7 @@ lynx -dump $url
 mv /var/www/blog/wp-admin/install.php
 
 # Remave Lynx since we're done
-apt-get remove lynx
+misc_install_lynx 1
 
 # Remove Fireplace files
 rm -rf ~/webbies-fireplace
