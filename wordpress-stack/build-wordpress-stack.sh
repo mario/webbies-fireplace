@@ -110,7 +110,7 @@ echo 'Your MySQL root password is: '"$PASS"
 echo 'Your Wordpress database is: "wordpress"'
 echo 'Your Wordpress database user is: "WP_user"'
 echo 'Your Wordpress database password is: '"$PASS"
-echo 'Visit http://your-ip to see your Apache Welcome'
+echo 'Visit http://your-ip to see your Apache Welcome page'
 echo 'Visit http://your-ip/blog to see your Wordpress install'
 echo 'Visit http://your-ip/phpmyadmin to see your PHPMyAdmin install'
 echo
