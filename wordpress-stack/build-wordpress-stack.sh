@@ -95,7 +95,7 @@ url="http://$j/blog/wp-admin/install.php"
 lynx -dump $url
 
 # Remove install.php
-mv /var/www/blog/wp-admin/install.php
+rm /var/www/blog/wp-admin/install.php
 
 # Remave Lynx since we're done
 misc_install_lynx 1
