@@ -24,4 +24,11 @@ apache_module_enable 1
 misc_phpmyadmin_configure
 apache_manage 1
 
-echo 'Your MySQL root password is '"$PASS"
+echo '*****************************************************************'
+echo
+echo 'Done!'
+echo 'Your MySQL root password is: '"$PASS"
+echo 'Visit http://your-ip to see your Apache Welcome page'
+echo 'Visit http://your-ip/phpmyadmin to see your PHPMyAdmin install'
+echo
+echo '*****************************************************************'
