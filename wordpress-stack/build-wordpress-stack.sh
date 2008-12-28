@@ -83,7 +83,7 @@ sed -e 's/putyourdbnamehere/wordpress/' \
 # Run WP install steps
 # editing install.php to make it happen
 cd /var/www/blog/wp-admin
-mv install.php install.php.bak
+rm install.php
 cp ~/webbies-fireplace/wordpress-stack/sources/install.php /var/www/blog/wp-admin
 cat install.php | \
 sed 's/USEREMAIL/'$USEREMAIL'/' > install.tmp
@@ -95,7 +95,7 @@ url="http://$j/blog/wp-admin/install.php"
 lynx -dump $url
 
 # Remove install.php
-mv /var/www/blog/wp-admin/install.php /var/www/blog/wp-admin/install.php.bak2
+mv /var/www/blog/wp-admin/install.php
 
 # Remave Lynx since we're done
 apt-get remove lynx
