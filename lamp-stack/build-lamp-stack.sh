@@ -29,7 +29,7 @@ echo 'Done'
 # Enabling ufw
 
 echo 'Enabling ufw'
-ufw enable
+echo y | Sufw enable
 echo 'Done'
 
 # Setting up ufw for openSSH
