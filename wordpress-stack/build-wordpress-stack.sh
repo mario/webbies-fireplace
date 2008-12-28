@@ -8,7 +8,7 @@
 
 # TODO: add blog title as argument
 
-which mysql
+which mysqld
 
 if [ $? -eq 0 ]; then
   # exit if MySQL is found
