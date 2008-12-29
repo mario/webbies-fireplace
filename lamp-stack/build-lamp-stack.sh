@@ -21,7 +21,7 @@ php_install 2
 php_module_install 2 1
 db_mysql_install_configure
 apache_module_enable 1
-misc_phpmyadmin_configure
+misc_phpmyadmin_install_configure
 apache_manage 1
 
 echo '*****************************************************************'

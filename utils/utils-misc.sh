@@ -36,7 +36,7 @@ echo 'Done'
 
 }
 
-misc_phpmyadmin_configure () {
+misc_phpmyadmin_install_configure () {
 
 # Installing phpmysqladmin
 
