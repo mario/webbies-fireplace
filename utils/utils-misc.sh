@@ -31,7 +31,7 @@ misc_install_syslog () {
 # Essential packages
 
 echo 'Fetching and installing essential log packages'
-apt-get install syslog-ng logrotate -y
+apt-get install -y syslog-ng logrotate
 echo 'Done'
 
 }
@@ -41,7 +41,7 @@ misc_phpmyadmin_configure () {
 # Installing phpmysqladmin
 
 echo 'Getting up and ready with phpmysqladmin'
-DEBIAN_FRONTEND=noninteractive apt-get install phpmyadmin -y
+DEBIAN_FRONTEND=noninteractive apt-get install -y phpmyadmin 
 echo 'Done'
 
 # Setting up phpmysqladmin
